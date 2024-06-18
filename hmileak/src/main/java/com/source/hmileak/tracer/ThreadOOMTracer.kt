@@ -3,10 +3,7 @@ package com.source.hmileak.tracer
 import com.source.hmileak.base.Config
 import com.source.hmileak.base.OOMTracker
 
-/**
- *  内存溢出检测
- */
-class OOMTracer : OOMTracker(){
+class ThreadOOMTracer : OOMTracker() {
     override fun init(config: Config) {
         TODO("Not yet implemented")
     }
