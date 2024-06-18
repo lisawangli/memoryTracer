@@ -3,13 +3,10 @@ package com.source.memorytracer
 import android.app.ActivityManager
 import android.os.Bundle
 import android.util.Log
-<<<<<<< Updated upstream
 import androidx.appcompat.app.AppCompatActivity
 import com.source.hmileak.util.getFreeMemory
-=======
 import android.widget.TextView
 import com.source.log.Logger
->>>>>>> Stashed changes
 import com.source.memorytracer.databinding.ActivityMainBinding
 import java.io.IOException
 import java.io.RandomAccessFile
@@ -36,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         Logger.writeLog(strP,"Application started.\n");
         Log.e("MainActivity","time:"+(System.currentTimeMillis() - start));
         // Example of a call to a native method
-<<<<<<< Updated upstream
         binding.sampleText.text = stringFromJNI()
 
 //        var config:Config = Config.Builder().setApplication(application).build()
@@ -45,9 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         var total = getFreeMemory()
         Log.e("MainActivity", "free memory: $total")
-=======
-//        binding.sampleText.text = stringFromJNI()
->>>>>>> Stashed changes
+
     }
 
     /**
