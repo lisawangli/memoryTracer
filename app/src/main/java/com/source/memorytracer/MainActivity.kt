@@ -1,9 +1,14 @@
 package com.source.memorytracer
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.ActivityManager
 import android.os.Bundle
-import android.widget.TextView
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import com.source.hmileak.util.getFreeMemory
 import com.source.memorytracer.databinding.ActivityMainBinding
+import java.io.IOException
+import java.io.RandomAccessFile
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +22,13 @@ class MainActivity : AppCompatActivity() {
 
         // Example of a call to a native method
         binding.sampleText.text = stringFromJNI()
+
+//        var config:Config = Config.Builder().setApplication(application).build()
+//        OOMMonitor.init(config)
+//        OOMMonitor.startLoop()
+
+        var total = getFreeMemory()
+        Log.e("MainActivity", "free memory: $total")
     }
 
     /**
@@ -31,4 +43,8 @@ class MainActivity : AppCompatActivity() {
             System.loadLibrary("memorytracer")
         }
     }
+
+
+
+
 }

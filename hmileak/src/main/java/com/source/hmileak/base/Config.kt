@@ -6,9 +6,9 @@ import android.os.Handler
 class Config private constructor(
     val application: Application,
     internal val loopHandlerInvoker: () -> Handler
-){
+) {
 
-    class Builder{
+    class Builder {
         private lateinit var mApplication: Application
 
         private var mLoopHandlerInvoker: (() -> Handler)? = null
@@ -16,16 +16,17 @@ class Config private constructor(
         fun setApplication(application: Application) = apply {
             mApplication = application
         }
-    fun setLoopHandlerInvoker(loopHandlerInvoker: () -> Handler) = apply {
-        this.mLoopHandlerInvoker = loopHandlerInvoker
-    }
 
-    fun build():Config = Config (
-        application = mApplication,
+        fun setLoopHandlerInvoker(loopHandlerInvoker: () -> Handler) = apply {
+            this.mLoopHandlerInvoker = loopHandlerInvoker
+        }
 
-        loopHandlerInvoker = mLoopHandlerInvoker ?: { LoopThread.LOOP_HANDLER }
+        fun build(): Config = Config(
+            application = mApplication,
 
-    )
+            loopHandlerInvoker = mLoopHandlerInvoker ?: { LoopThread.LOOP_HANDLER }
+
+        )
 
     }
 
