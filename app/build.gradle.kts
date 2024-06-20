@@ -41,10 +41,13 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        prefab = true
     }
 }
 
+
 dependencies {
+    implementation(project(mapOf("path" to ":bytehook")))
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -55,7 +58,6 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     implementation(project(mapOf("path" to ":hmileak")))
-    implementation(project(mapOf("path" to ":nativeleak")))
     implementation(project(mapOf("path" to ":hprofanalyzer")))
     implementation(project(mapOf("path" to ":log")))
 

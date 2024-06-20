@@ -1,15 +1,13 @@
 package com.source.memorytracer
 
-import android.app.ActivityManager
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.bytedance.android.bytehook.ByteHook
+import com.bytedance.android.bytehook.ByteHook.ConfigBuilder
 import com.source.hmileak.util.getFreeMemory
-import android.widget.TextView
 import com.source.log.Logger
 import com.source.memorytracer.databinding.ActivityMainBinding
-import java.io.IOException
-import java.io.RandomAccessFile
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +18,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-
+        // init bytehook
+        val r = ByteHook.init(
+            ConfigBuilder()
+                .setMode(ByteHook.Mode.AUTOMATIC) //                .setMode(ByteHook.Mode.MANUAL)
+                .setDebug(true)
+                .setRecordable(true)
+                .build()
+        )
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val logFilePath = "/sdcard/Download/log.txt"

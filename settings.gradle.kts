@@ -19,3 +19,5 @@ include(":hmileak")
 include(":nativeleak")
 include(":hprofanalyzer")
 include(":log")
+include(":bytehook")
+

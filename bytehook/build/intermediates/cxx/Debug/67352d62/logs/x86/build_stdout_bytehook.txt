@@ -1,0 +1,2 @@
+ninja: Entering directory `D:\project\ByteHook-main\ByteHook-main\bytehook\.cxx\Debug\67352d62\x86'
+ninja: no work to do.

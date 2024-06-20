@@ -1,0 +1,27 @@
+ninja: Entering directory `D:\project\ByteHook-main\ByteHook-main\bytehook\.cxx\Debug\67352d62\x86_64'
+[1/26] Building C object CMakeFiles/bytehook.dir/bh_cfi.c.o
+[2/26] Building C object CMakeFiles/bytehook.dir/bh_trampo_arm.c.o
+[3/26] Building C object CMakeFiles/bytehook.dir/bh_log.c.o
+[4/26] Building C object CMakeFiles/bytehook.dir/bh_sleb128.c.o
+[5/26] Building C object CMakeFiles/bytehook.dir/bh_linker_mutex.c.o
+[6/26] Building C object CMakeFiles/bytehook.dir/bh_dl_iterate.c.o
+[7/26] Building C object CMakeFiles/bytehook.dir/bh_jni.c.o
+[8/26] Building C object CMakeFiles/bytehook.dir/bh_trampo_x86.c.o
+[9/26] Building C object CMakeFiles/bytehook.dir/bh_trampo_arm64.c.o
+[10/26] Building C object CMakeFiles/bytehook.dir/bh_hook.c.o
+[11/26] Building C object CMakeFiles/bytehook.dir/bh_core.c.o
+[12/26] Building C object CMakeFiles/bytehook.dir/bh_linker.c.o
+[13/26] Building C object CMakeFiles/bytehook.dir/bh_dl.c.o
+[14/26] Building C object CMakeFiles/bytehook.dir/bh_trampo_x86_64.c.o
+[15/26] Building C object CMakeFiles/bytehook.dir/bh_task.c.o
+[16/26] Building C object CMakeFiles/bytehook.dir/bh_task_manager.c.o
+[17/26] Building C object CMakeFiles/bytehook.dir/bh_recorder.c.o
+[18/26] Building C object CMakeFiles/bytehook.dir/bytehook.c.o
+[19/26] Building C object CMakeFiles/bytehook.dir/bh_dl_monitor.c.o
+[20/26] Building C object CMakeFiles/bytehook.dir/bh_trampo.c.o
+[21/26] Building C object CMakeFiles/bytehook.dir/bytesig.c.o
+[22/26] Building C object CMakeFiles/bytehook.dir/bh_elf_manager.c.o
+[23/26] Building C object CMakeFiles/bytehook.dir/bh_elf.c.o
+[24/26] Building C object CMakeFiles/bytehook.dir/bh_hook_manager.c.o
+[25/26] Building C object CMakeFiles/bytehook.dir/bh_util.c.o
+[26/26] Linking C shared library D:\project\ByteHook-main\ByteHook-main\bytehook\build\intermediates\cxx\Debug\67352d62\obj\x86_64\libbytehook.so
