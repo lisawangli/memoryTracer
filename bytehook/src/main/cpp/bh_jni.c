@@ -22,12 +22,103 @@
 // Created by Kelun Cai (caikelun@bytedance.com) on 2020-06-02.
 
 #include <jni.h>
+#include <dlfcn.h>
+#include <android/log.h>
+#include <fcntl.h>
+#include <inttypes.h>
+#include <stdint.h>
 #include <stdlib.h>
-
+#include <string.h>
+#include <sys/time.h>
+#include <unistd.h>
 #include "bytehook.h"
-
+#include "bh_log.h"
+#define HACKER_TAG            "bytehook_tag"
 #define BH_JNI_VERSION    JNI_VERSION_1_6
 #define BH_JNI_CLASS_NAME "com/bytedance/android/bytehook/ByteHook"
+
+
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
+#define LOG(fmt, ...) __android_log_print(ANDROID_LOG_INFO, HACKER_TAG, fmt, ##__VA_ARGS__)
+#pragma clang diagnostic pop
+typedef void *(*malloc_t)(size_t);
+typedef void (*free_t)(void*);
+
+#define OPEN_DEF(fn)                                                                                         \
+  static fn##_t fn##_prev = NULL;                                                                            \
+  static bytehook_stub_t fn##_stub = NULL;                                                                   \
+  static void fn##_hooked_callback(bytehook_stub_t task_stub, int status_code, const char *caller_path_name, \
+                                   const char *sym_name, void *new_func, void *prev_func, void *arg) {       \
+    if (BYTEHOOK_STATUS_CODE_ORIG_ADDR == status_code) {                                                     \
+      fn##_prev = (fn##_t)prev_func;                                                                         \
+      LOG(">>>>> save original address: %" PRIxPTR, (uintptr_t)prev_func);                                   \
+    } else {                                                                                                 \
+      LOG(">>>>> hooked. stub: %" PRIxPTR                                                                    \
+          ", status: %d, caller_path_name: %s, sym_name: %s, new_func: %" PRIxPTR ", prev_func: %" PRIxPTR   \
+          ", arg: %" PRIxPTR,                                                                                \
+          (uintptr_t)task_stub, status_code, caller_path_name, sym_name, (uintptr_t)new_func,                \
+          (uintptr_t)prev_func, (uintptr_t)arg);                                                             \
+    }                                                                                                        \
+  }
+
+
+OPEN_DEF(malloc)
+OPEN_DEF(free)
+static void *malloc_proxy(size_t size) {
+    void *ptr = BYTEHOOK_CALL_PREV(malloc_proxy, malloc_t, size);
+    LOG("malloc_proxy called with size: %zu, returning address: %p\n", size, ptr);
+    return ptr;
+}
+
+static void free_proxy(void *ptr) {
+    BYTEHOOK_CALL_PREV(free_proxy,free_t,ptr);
+    LOG("free_proxy called with address: %p\n", ptr);
+
+}
+
+static int hacker_hook(JNIEnv *env, jobject thiz, jint type) {
+    (void)env, (void)thiz;
+    if (type==1){
+
+    }
+
+    malloc_stub = bytehook_hook_single("libmemorytracer.so",NULL,"malloc", (void *)malloc_proxy,
+                                       malloc_hooked_callback,NULL);
+    free_stub = bytehook_hook_single("libmemorytracer.so", NULL, "free", (void *)free_proxy, free_hooked_callback, NULL);
+
+    return 0;
+}
+
+static int hacker_unhook(JNIEnv *env, jobject thiz) {
+    (void)env, (void)thiz;
+    if (NULL != malloc_stub) {
+        bytehook_unhook(malloc_stub);
+        malloc_stub = NULL;
+    }
+    if (NULL != free_stub) {
+        bytehook_unhook(free_stub);
+        free_stub = NULL;
+    }
+
+    return 0;
+}
+
+static void hacker_dump_records(JNIEnv *env, jobject thiz, jstring pathname) {
+    (void)thiz;
+
+    const char *c_pathname = (*env)->GetStringUTFChars(env, pathname, 0);
+    if (NULL == c_pathname) return;
+
+    int fd = open(c_pathname, O_CREAT | O_WRONLY | O_CLOEXEC | O_TRUNC | O_APPEND, S_IRUSR | S_IWUSR);
+    if (fd >= 0) {
+        bytehook_dump_records(fd, BYTEHOOK_RECORD_ITEM_ALL);
+        close(fd);
+    }
+
+    (*env)->ReleaseStringUTFChars(env, pathname, c_pathname);
+}
 
 static jstring bh_jni_get_version(JNIEnv *env, jobject thiz) {
   (void)thiz;
@@ -100,6 +191,8 @@ static jstring bh_jni_get_records(JNIEnv *env, jobject thiz, jint item_flags) {
   return jstr;
 }
 
+
+
 static jstring bh_jni_get_arch(JNIEnv *env, jobject thiz) {
   (void)thiz;
 
@@ -116,6 +209,14 @@ static jstring bh_jni_get_arch(JNIEnv *env, jobject thiz) {
 #endif
 
   return (*env)->NewStringUTF(env, arch);
+}
+
+static void bh_jni_memoryhook(JNIEnv *env, jobject thiz){
+  (void)env, (void)thiz;
+  BH_LOG_SHOW("bytehook  bh_jni_memoryhook");
+
+
+
 }
 
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
@@ -139,8 +240,15 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
                          {"nativeGetRecordable", "()Z", (void *)bh_jni_get_recordable},
                          {"nativeSetRecordable", "(Z)V", (void *)bh_jni_set_recordable},
                          {"nativeGetRecords", "(I)Ljava/lang/String;", (void *)bh_jni_get_records},
-                         {"nativeGetArch", "()Ljava/lang/String;", (void *)bh_jni_get_arch}};
+                         {"nativeGetArch", "()Ljava/lang/String;", (void *)bh_jni_get_arch},
+                         {"nativeHook", "(I)I", (void *)hacker_hook},
+                         {"nativeUnhook", "()I", (void *)hacker_unhook},
+                         {"nativeDumpRecords", "(Ljava/lang/String;)V", (void *)hacker_dump_records},
+                         {"memoryHook", "()V", (void *)bh_jni_memoryhook}
+
+  };
   if (__predict_false(0 != (*env)->RegisterNatives(env, cls, m, sizeof(m) / sizeof(m[0])))) return JNI_ERR;
 
   return BH_JNI_VERSION;
 }
+

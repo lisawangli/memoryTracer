@@ -1,0 +1,48 @@
+ninja: Entering directory `C:\Users\ts\AndroidStudioProjects\memoryTracer\bytehook\.cxx\Debug\4t1g3uo4\x86'
+[1/29] Building C object CMakeFiles/bytehook.dir/bh_cfi.c.o
+[2/29] Building C object CMakeFiles/bytehook.dir/bh_log.c.o
+[3/29] Building C object CMakeFiles/bytehook.dir/bh_sleb128.c.o
+[4/29] Building C object CMakeFiles/bytehook.dir/bh_linker_mutex.c.o
+[5/29] Building C object CMakeFiles/bytehook.dir/bh_dl_iterate.c.o
+[6/29] Building C object CMakeFiles/bytehook.dir/bh_dl.c.o
+[7/29] Building C object CMakeFiles/bytehook.dir/bh_core.c.o
+[8/29] Building C object CMakeFiles/bytehook.dir/bh_jni.c.o
+[9/29] Building C object CMakeFiles/bytehook.dir/bh_trampo_arm.c.o
+[10/29] Building C object CMakeFiles/bytehook.dir/bh_linker.c.o
+[11/29] Building C object CMakeFiles/bytehook.dir/bh_trampo_x86.c.o
+[12/29] Building C object CMakeFiles/bytehook.dir/bh_trampo_arm64.c.o
+[13/29] Building C object CMakeFiles/bytehook.dir/bh_task_manager.c.o
+[14/29] Building C object CMakeFiles/bytehook.dir/bh_hook.c.o
+[15/29] Building C object CMakeFiles/bytehook.dir/bytehook.c.o
+[16/29] Building C object CMakeFiles/bytehook.dir/bh_task.c.o
+[17/29] Building C object CMakeFiles/bytehook.dir/bh_trampo_x86_64.c.o
+[18/29] Building C object CMakeFiles/bytehook.dir/bh_recorder.c.o
+[19/29] Building C object CMakeFiles/bytehook.dir/bh_trampo.c.o
+[20/29] Building C object CMakeFiles/bytehook.dir/bh_dl_monitor.c.o
+[21/29] Building C object CMakeFiles/hacker.dir/hook.c.o
+FAILED: CMakeFiles/hacker.dir/hook.c.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\23.2.8568313\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe --target=i686-none-linux-android24 --gcc-toolchain=C:/Users/ts/AppData/Local/Android/Sdk/ndk/23.2.8568313/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/23.2.8568313/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dhacker_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -std=c17 -MD -MT CMakeFiles/hacker.dir/hook.c.o -MF CMakeFiles\hacker.dir\hook.c.o.d -o CMakeFiles/hacker.dir/hook.c.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/bytehook/src/main/cpp/hook.c
+C:/Users/ts/AndroidStudioProjects/memoryTracer/bytehook/src/main/cpp/hook.c:11:10: fatal error: 'bytehook.h' file not found
+#include "bytehook.h"
+         ^~~~~~~~~~~~
+1 error generated.
+[22/29] Building C object CMakeFiles/bytehook.dir/hook.c.o
+C:/Users/ts/AndroidStudioProjects/memoryTracer/bytehook/src/main/cpp/hook.c:60:1: warning: unused function 'Java_com_bytedance_android_bytehook_NativeHook_nativeHook' [-Wunused-function]
+Java_com_bytedance_android_bytehook_NativeHook_nativeHook(JNIEnv *env, jclass clazz, jint type) {
+^
+C:/Users/ts/AndroidStudioProjects/memoryTracer/bytehook/src/main/cpp/hook.c:74:1: warning: unused function 'Java_com_bytedance_android_bytehook_NativeHook_nativeUnhook' [-Wunused-function]
+Java_com_bytedance_android_bytehook_NativeHook_nativeUnhook(JNIEnv *env, jclass clazz) {
+^
+C:/Users/ts/AndroidStudioProjects/memoryTracer/bytehook/src/main/cpp/hook.c:89:1: warning: unused function 'Java_com_bytedance_android_bytehook_NativeHook_nativeDumpRecords' [-Wunused-function]
+Java_com_bytedance_android_bytehook_NativeHook_nativeDumpRecords(JNIEnv *env, jclass clazz,
+^
+C:/Users/ts/AndroidStudioProjects/memoryTracer/bytehook/src/main/cpp/hook.c:98:13: warning: unused function 'hacker_dump_records' [-Wunused-function]
+static void hacker_dump_records(JNIEnv *env, jobject thiz, jstring pathname) {
+            ^
+4 warnings generated.
+[23/29] Building C object CMakeFiles/bytehook.dir/bh_hook_manager.c.o
+[24/29] Building C object CMakeFiles/bytehook.dir/bytesig.c.o
+[25/29] Building C object CMakeFiles/bytehook.dir/bh_elf.c.o
+[26/29] Building C object CMakeFiles/bytehook.dir/bh_elf_manager.c.o
+[27/29] Building C object CMakeFiles/bytehook.dir/bh_util.c.o
+ninja: build stopped: subcommand failed.

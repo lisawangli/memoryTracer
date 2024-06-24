@@ -74,6 +74,7 @@ public class ByteHook {
 
         // call native bytehook_init()
         try {
+            memoryHook();
             initStatus = nativeInit(config.getMode(), config.getDebug());
         } catch (Throwable ignored) {
             initStatus = ERRNO_INIT_EXCEPTION;
@@ -316,4 +317,11 @@ public class ByteHook {
     private static native void nativeSetRecordable(boolean recordable);
     private static native String nativeGetRecords(int itemFlags);
     private static native String nativeGetArch();
+
+    private static native void memoryHook();
+
+
+    public static native int nativeHook(int type);
+    public static native int nativeUnhook();
+    public static native void nativeDumpRecords(String pathname);
 }

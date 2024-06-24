@@ -2,10 +2,11 @@ package com.source.memorytracer
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
 import com.bytedance.android.bytehook.ByteHook
 import com.bytedance.android.bytehook.ByteHook.ConfigBuilder
-import com.source.hmileak.util.getFreeMemory
 import com.source.log.Logger
 import com.source.memorytracer.databinding.ActivityMainBinding
 
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
                 .setRecordable(true)
                 .build()
         )
+
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val logFilePath = "/sdcard/Download/log.txt"
@@ -38,16 +42,29 @@ class MainActivity : AppCompatActivity() {
         Logger.writeLog(strP,"Application started.\n");
         Log.e("MainActivity","time:"+(System.currentTimeMillis() - start));
         // Example of a call to a native method
+
+//        NativeHook.hook(1)
+            ByteHook.nativeHook(1)
+
         binding.sampleText.text = stringFromJNI()
+        binding.sampleText.setOnClickListener(object : OnClickListener {
+            override fun onClick(v: View?) {
+//               NativeHook.dumpRecords("")
+            }
+
+        } )
+
+        ByteHook.nativeUnhook()
 
 //        var config:Config = Config.Builder().setApplication(application).build()
 //        OOMMonitor.init(config)
 //        OOMMonitor.startLoop()
 
-        var total = getFreeMemory()
-        Log.e("MainActivity", "free memory: $total")
+
 
     }
+
+
 
     /**
      * A native method that is implemented by the 'memorytracer' native library,

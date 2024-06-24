@@ -16,7 +16,6 @@ dependencyResolutionManagement {
 rootProject.name = "memoryTracer"
 include(":app")
 include(":hmileak")
-include(":nativeleak")
 include(":hprofanalyzer")
 include(":log")
 include(":bytehook")
