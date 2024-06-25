@@ -24,30 +24,45 @@ Java_com_source_memorytracer_MainActivity_stringFromJNI(
     std::string hello = "Hello from C++";
     LOG_ERROR("loglib","Java_com_source_memorytracer_MainActivity_stringFromJNI start");
 
-    int init_result = bytehook_init(0, false);
-    if (init_result != 0) {
-        LOG_ERROR("stderr", "Bytehook initialization failed\n");
-        return (jstring) "1";
+//    int init_result = bytehook_init(0, false);
+//    if (init_result != 0) {
+//        LOG_ERROR("stderr", "Bytehook initialization failed\n");
+//        return (jstring) "1";
+//    }
+
+
+
+    int *array = (int *)malloc(5 * sizeof(int)); // 初始分配5个整数
+    if (array == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
     }
 
-
-    // 设置 hook 到 malloc 和 free
-    bytehook_hook_all("libc.so.6", "malloc", (void *)my_malloc, NULL, NULL);
-    bytehook_hook_all("libc.so.6", "free", (void *)my_free, NULL, NULL);
-
-    // 测试 hook
-    void *ptr = malloc(1024);
-    if (ptr != NULL) {
-        // 使用分配的内存
-        // ...
-
-        // 释放内存
-        free(ptr);
+    // 使用分配的内存
+    for (int i = 0; i < 5; ++i) {
+        array[i] = i;
     }
 
+    // 需要更多的空间
+    array = (int *)realloc(array, 10 * sizeof(int)); // 重新分配10个整数
+    if (array == NULL) {
+        fprintf(stderr, "Memory reallocation failed\n");
+    }
+
+    // 扩展数组
+    for (int i = 5; i < 10; ++i) {
+        array[i] = i;
+    }
+
+    // 打印数组内容
+    for (int i = 0; i < 10; ++i) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+
+    // 释放内存
+    free(array);
     // 清理 Bytehook
     LOG_ERROR("loglib","Java_com_source_memorytracer_MainActivity_stringFromJNI end");
-
 
     return env->NewStringUTF(hello.c_str());
 }

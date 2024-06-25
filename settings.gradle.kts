@@ -20,3 +20,4 @@ include(":hprofanalyzer")
 include(":log")
 include(":bytehook")
 
+include(":nativeleak")

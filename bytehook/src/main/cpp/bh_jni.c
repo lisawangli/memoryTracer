@@ -43,7 +43,14 @@
 #pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
 #define LOG(fmt, ...) __android_log_print(ANDROID_LOG_INFO, HACKER_TAG, fmt, ##__VA_ARGS__)
 #pragma clang diagnostic pop
+
+typedef void *(*realloc_t)(void *,size_t);
+typedef void *(*calloc_t)(size_t,size_t);
+typedef void *(*memalign_t)(size_t,size_t);
+
+typedef int (*posix_memalign_t)(void **, size_t, size_t);
 typedef void *(*malloc_t)(size_t);
+
 typedef void (*free_t)(void*);
 
 #define OPEN_DEF(fn)                                                                                         \
@@ -65,7 +72,40 @@ typedef void (*free_t)(void*);
 
 
 OPEN_DEF(malloc)
+OPEN_DEF(realloc)
+OPEN_DEF(calloc)
+OPEN_DEF(memalign)
+OPEN_DEF(posix_memalign)
 OPEN_DEF(free)
+
+static void *memalign_proxy(size_t ptr,size_t size){
+    void *new_ptr = BYTEHOOK_CALL_PREV(memalign_proxy,memalign_t ,ptr,size);
+    LOG("memalign_proxy called with alignment: %zu, size: %zu, returning address: %p\n", ptr, size, new_ptr);
+    return new_ptr;
+
+}
+
+static int posix_memalign_proxy(void **memptr,size_t alignment,size_t size) {
+    int result = BYTEHOOK_CALL_PREV(posix_memalign_proxy,posix_memalign_t,memptr,alignment,size);
+    if (result==0){
+        LOG("posix_memalign_proxy called with alignment: %zu, size: %zu, returning pointer: %p\n", alignment, size, *memptr);
+    }
+    return result;
+}
+
+static void *realloc_proxy(void *ptr,size_t size){
+    void *new_ptr = BYTEHOOK_CALL_PREV(realloc_proxy,realloc_t,ptr,size);
+    LOG("realloc_proxy called with ptr: %p, size: %zu, returning address: %p\n", ptr, size, new_ptr);
+    return new_ptr;
+}
+
+static void *calloc_proxy(size_t ptr,size_t size){
+    void *new_ptr = BYTEHOOK_CALL_PREV(realloc_proxy,calloc_t ,ptr,size);
+    LOG("calloc_proxy called with nmemb: %zu, size: %zu, returning address: %p\n", ptr, size, ptr);
+    return new_ptr;
+}
+
+
 static void *malloc_proxy(size_t size) {
     void *ptr = BYTEHOOK_CALL_PREV(malloc_proxy, malloc_t, size);
     LOG("malloc_proxy called with size: %zu, returning address: %p\n", size, ptr);
@@ -88,6 +128,11 @@ static int hacker_hook(JNIEnv *env, jobject thiz, jint type) {
                                        malloc_hooked_callback,NULL);
     free_stub = bytehook_hook_single("libmemorytracer.so", NULL, "free", (void *)free_proxy, free_hooked_callback, NULL);
 
+    calloc_stub = bytehook_hook_single("libmemorytracer.so",NULL, "calloc",(void *) calloc_proxy,
+                                       calloc_hooked_callback,NULL);
+    realloc_stub = bytehook_hook_single("libmemorytracer.so",NULL,"realloc",(void *) realloc_proxy,realloc_hooked_callback,NULL);
+    memalign_stub = bytehook_hook_single("libmemorytracer.so",NULL,"memalign",(void *) memalign_proxy,memalign_hooked_callback,NULL);
+    posix_memalign_stub = bytehook_hook_single("libmemorytracer.so",NULL,"posix_memalign",(void *) posix_memalign_proxy,posix_memalign_hooked_callback,NULL);
     return 0;
 }
 
