@@ -2,6 +2,7 @@
 generate_cxx_metadata
   execute-generate-process
     exec-configure 1090ms
-  execute-generate-process completed in 1101ms
+    [gap of 10ms]
+  execute-generate-process completed in 1102ms
 generate_cxx_metadata completed in 1134ms
 
