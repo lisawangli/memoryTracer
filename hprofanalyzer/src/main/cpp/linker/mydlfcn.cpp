@@ -16,7 +16,6 @@
 #include <dlfcn.h>
 #include "map_util.hpp"
 
-namespace linker {
     int dl_iterate_phdr_wrapper(int(*__callback)
             ( struct dl_phdr_info *,size_t,void *),
                     void *__data
@@ -131,4 +130,3 @@ namespace linker {
         delete reinterpret_cast<SoDlInfo *>(handle);
         return 0;
     }
-}

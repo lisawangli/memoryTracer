@@ -17,7 +17,6 @@
 
 #define LOG_DEBUG(tag,fmt,...) __android_log_print(ANDROID_LOG_DEBUG,tag,fmt,##__VA_ARGS__)
 
-namespace linker {
     class ElfWrapper {
     public:
         ElfWrapper() : start_(nullptr), size_(0) {}
@@ -92,6 +91,6 @@ namespace linker {
     private:
         std::string elf_data_;
     };
-}  // namespace linker
+ // namespace linker
 
 #endif //MEMORYTRACER_ELF_WRAPPER_H

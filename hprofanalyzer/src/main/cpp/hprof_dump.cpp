@@ -25,34 +25,34 @@ namespace leak_monitor{
             return;
         }
 
-        void *handle = linker::DlFcn::dlopen("libart.so", RTLD_NOW);
+        void *handle = DlFcn::dlopen("libart.so", RTLD_NOW);
         if (android_api_<__ANDROID_API_R__) {
             suspend_vm_func_ =
-                    (void (*)())linker::DlFcn::dlsym(handle,"_ZN3art3Dbg9SuspendVMEv");
-            resume_vm_func_ = (void (*)())linker::DlFcn::dlsym(
+                    (void (*)())DlFcn::dlsym(handle,"_ZN3art3Dbg9SuspendVMEv");
+            resume_vm_func_ = (void (*)())DlFcn::dlsym(
                     handle,"_ZN3art3Dbg8ResumeVMEv"
                     );
         } else if(android_api_<=__ANDROID_API_S__) {
             ssa_instance_ = std::make_unique<char[]>(64);
             sgc_instance_ = std::make_unique<char[]>(64);
             ssa_constructor_func_ =  (void (*)(void *, const char *, bool))
-                    linker::DlFcn::dlsym(handle,"_ZN3art16ScopedSuspendAllC1EPKcb");
-            ssa_destructor_func_ =(void (*)(void *))linker::DlFcn::dlsym(
+                    DlFcn::dlsym(handle,"_ZN3art16ScopedSuspendAllC1EPKcb");
+            ssa_destructor_func_ =(void (*)(void *))DlFcn::dlsym(
                     handle,"_ZN3art16ScopedSuspendAllD1Ev");
             sgc_constructor_func_ =
-                    (void (*)(void *, void *, GcCause, CollectorType))linker::DlFcn::dlsym(
+                    (void (*)(void *, void *, GcCause, CollectorType))DlFcn::dlsym(
                             handle,
                             "_ZN3art2gc23ScopedGCCriticalSectionC1EPNS_6ThreadENS0_"
                             "7GcCauseENS0_13CollectorTypeE");
-            sgc_destructor_func_ = (void (*)(void *))linker::DlFcn::dlsym(
+            sgc_destructor_func_ = (void (*)(void *))DlFcn::dlsym(
                     handle,"_ZN3art2gc23ScopedGCCriticalSectionD1Ev");
-            mutator_lock_otr = (void **) linker::DlFcn::dlsym(handle,"_ZN3art5Locks13mutator_lock_E");
-            exclusive_lock_fnc_ = (void (*) (void *,void *))linker::DlFcn::dlsym(
+            mutator_lock_otr = (void **) DlFcn::dlsym(handle,"_ZN3art5Locks13mutator_lock_E");
+            exclusive_lock_fnc_ = (void (*) (void *,void *))DlFcn::dlsym(
                     handle,"_ZN3art17ReaderWriterMutex13ExclusiveLockEPNS_6ThreadE");
-            exclusive_unlock_func_ = (void (*)(void *, void *))linker::DlFcn::dlsym(
+            exclusive_unlock_func_ = (void (*)(void *, void *))DlFcn::dlsym(
                     handle, "_ZN3art17ReaderWriterMutex15ExclusiveUnlockEPNS_6ThreadE");
         }
-        linker::DlFcn::dlclose(handle);
+        DlFcn::dlclose(handle);
         init_done_ = true;
     }
 
