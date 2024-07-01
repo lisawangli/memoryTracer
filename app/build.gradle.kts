@@ -58,7 +58,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     implementation(project(mapOf("path" to ":hmileak")))
-    implementation(project(mapOf("path" to ":hprofanalyzer")))
+//    implementation(project(mapOf("path" to ":hprofanalyzer")))
     implementation(project(mapOf("path" to ":log")))
 
     testImplementation("junit:junit:4.13.2")

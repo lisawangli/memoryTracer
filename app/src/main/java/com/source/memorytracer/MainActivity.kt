@@ -7,6 +7,7 @@ import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
 import com.bytedance.android.bytehook.ByteHook
 import com.bytedance.android.bytehook.ByteHook.ConfigBuilder
+import com.source.hmileak.util.PermissionUtil
 import com.source.log.Logger
 import com.source.memorytracer.databinding.ActivityMainBinding
 
@@ -59,8 +60,13 @@ class MainActivity : AppCompatActivity() {
 //        var config:Config = Config.Builder().setApplication(application).build()
 //        OOMMonitor.init(config)
 //        OOMMonitor.startLoop()
-
-
+        // <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        //    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+        if(!PermissionUtil.hasPermission(this,"android.permission.WRITE_EXTERNAL_STORAGE"
+                , "android.permission.READ_EXTERNAL_STORAGE")){
+            PermissionUtil.requestPermissions(this,"android.permission.WRITE_EXTERNAL_STORAGE"
+                    , "android.permission.READ_EXTERNAL_STORAGE",requestCode=100, listener=null)
+        }
 
     }
 
