@@ -30,7 +30,6 @@ extern "C" __attribute__((weak)) int dl_iterate_phdr(
 #endif
 
 
-namespace linker {
 class MapUtil {
  public:
   /**
@@ -308,4 +307,3 @@ class MapUtil {
     return true;
   }
 };
-}  // namespace linker

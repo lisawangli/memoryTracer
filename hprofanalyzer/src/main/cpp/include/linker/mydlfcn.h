@@ -8,7 +8,6 @@
 #include <link.h>
 #include <string>
 
-namespace linker{
 
     class DlFcn {
 
@@ -71,7 +70,7 @@ namespace linker{
 
     };
 
-}
+
 
 
 

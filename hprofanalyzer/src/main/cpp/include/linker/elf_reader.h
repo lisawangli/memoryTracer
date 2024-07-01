@@ -8,7 +8,6 @@
 #include <link.h>
 #include <string>
 
-namespace linker{
 
     class ElfReader {
     public:
@@ -86,7 +85,7 @@ namespace linker{
 
     };
 
-}
+
 
 
 

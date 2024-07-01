@@ -13,7 +13,6 @@
 #include <./../lzma/Xz.h>
 #include <./../lzma/XzCrc64.h>
 
-namespace linker{
 
     static const char *kDynstrName = ".dynstr";
     static const char *kStrtabName = ".strtab";
@@ -251,4 +250,3 @@ namespace linker{
         decompressed_data = std::move(dst);
         return true;
     }
-}
