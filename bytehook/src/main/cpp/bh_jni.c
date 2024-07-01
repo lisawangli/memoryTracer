@@ -33,6 +33,7 @@
 #include <unistd.h>
 #include "bytehook.h"
 #include "bh_log.h"
+#include <pthread.h>
 #define HACKER_TAG            "bytehook_tag"
 #define BH_JNI_VERSION    JNI_VERSION_1_6
 #define BH_JNI_CLASS_NAME "com/bytedance/android/bytehook/ByteHook"
@@ -44,6 +45,8 @@
 #define LOG(fmt, ...) __android_log_print(ANDROID_LOG_INFO, HACKER_TAG, fmt, ##__VA_ARGS__)
 #pragma clang diagnostic pop
 
+
+
 typedef void *(*realloc_t)(void *,size_t);
 typedef void *(*calloc_t)(size_t,size_t);
 typedef void *(*memalign_t)(size_t,size_t);
@@ -52,6 +55,12 @@ typedef int (*posix_memalign_t)(void **, size_t, size_t);
 typedef void *(*malloc_t)(size_t);
 
 typedef void (*free_t)(void*);
+
+typedef int (*pthread_create_t)(pthread_t *, const pthread_attr_t *, void *(*)(void *), void *);
+typedef void (*pthread_exit_t)(void *);
+
+
+
 
 #define OPEN_DEF(fn)                                                                                         \
   static fn##_t fn##_prev = NULL;                                                                            \
@@ -77,6 +86,48 @@ OPEN_DEF(calloc)
 OPEN_DEF(memalign)
 OPEN_DEF(posix_memalign)
 OPEN_DEF(free)
+OPEN_DEF(pthread_create)
+OPEN_DEF(pthread_exit)
+
+
+pthread_t *created_threads[100];
+int created_threads_count = 0;
+
+// Proxy functions
+static int pthread_create_proxy(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg) {
+    int result = BYTEHOOK_CALL_PREV(pthread_create_proxy, pthread_create_t, thread, attr, start_routine, arg);
+    LOG("pthread_create_proxy  %p\n", *thread);
+
+    if (result == 0) {
+        // Thread was successfully created, add it to the list
+        if (created_threads_count < 100) {
+            created_threads[created_threads_count++] = (pthread_t *) *thread;
+            LOG("pthread_create_proxy called with thread: %p\n", *thread);
+        }
+    }
+    return result;
+}
+
+static void pthread_exit_proxy(void *retval) {
+    // Before exiting, check if there are any unjoined threads
+    for (int i = 0; i < created_threads_count; i++) {
+        pthread_t tid = (pthread_t) created_threads[i];
+        int detached;
+        pthread_attr_t attr;
+        pthread_attr_init(&attr);
+        pthread_getattr_np(tid, &attr);
+        pthread_attr_getdetachstate(&attr, &detached);
+        pthread_attr_destroy(&attr);
+
+        if (!detached && pthread_equal(pthread_self(), tid)) {
+            LOG("WARNING: Thread %p exited without being joined or detached.\n", tid);
+        }
+    }
+
+    // Call the original function
+    BYTEHOOK_CALL_PREV(pthread_exit_proxy, pthread_exit_t, retval);
+}
+
 
 static void *memalign_proxy(size_t ptr,size_t size){
     void *new_ptr = BYTEHOOK_CALL_PREV(memalign_proxy,memalign_t ,ptr,size);
@@ -123,6 +174,10 @@ static int hacker_hook(JNIEnv *env, jobject thiz, jint type) {
     if (type==1){
 
     }
+    pthread_create_stub = bytehook_hook_single("libmemorytracer.so", NULL, "pthread_create", (void *)pthread_create_proxy,
+                                               pthread_create_hooked_callback, NULL);
+    pthread_exit_stub = bytehook_hook_single("libmemorytracer.so", NULL, "pthread_exit", (void *)pthread_exit_proxy,
+                                             pthread_exit_hooked_callback, NULL);
 
     malloc_stub = bytehook_hook_single("libmemorytracer.so",NULL,"malloc", (void *)malloc_proxy,
                                        malloc_hooked_callback,NULL);
@@ -145,6 +200,14 @@ static int hacker_unhook(JNIEnv *env, jobject thiz) {
     if (NULL != free_stub) {
         bytehook_unhook(free_stub);
         free_stub = NULL;
+    }
+    if (NULL!=pthread_create_stub){
+        bytehook_unhook(pthread_create_stub);
+        pthread_create_stub = NULL;
+    }
+    if (NULL!=pthread_exit_stub){
+        bytehook_unhook(pthread_exit_stub);
+        pthread_exit_stub = NULL;
     }
 
     return 0;
