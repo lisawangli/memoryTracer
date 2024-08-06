@@ -1,0 +1,1450 @@
+ninja: Entering directory `C:\Users\ts\AndroidStudioProjects\memoryTracer\nativelib\.cxx\Debug\693p6w64\arm64-v8a'
+[1/49] Building C object CMakeFiles/base.dir/lzma/7zBuf.c.o
+[2/49] Building C object CMakeFiles/base.dir/lzma/7zCrc.c.o
+[3/49] Building C object CMakeFiles/base.dir/lzma/AesOpt.c.o
+[4/49] Building C object CMakeFiles/base.dir/lzma/7zCrcOpt.c.o
+[5/49] Building C object CMakeFiles/base.dir/lzma/7zAlloc.c.o
+[6/49] Building C object CMakeFiles/base.dir/lzma/7zBuf2.c.o
+[7/49] Building C object CMakeFiles/base.dir/lzma/Bra86.c.o
+[8/49] Building C object CMakeFiles/base.dir/lzma/Delta.c.o
+[9/49] Building C object CMakeFiles/base.dir/lzma/Bra.c.o
+[10/49] Building C object CMakeFiles/base.dir/lzma/Bcj2.c.o
+[11/49] Building C object CMakeFiles/base.dir/lzma/Alloc.c.o
+[12/49] Building C object CMakeFiles/base.dir/lzma/7zStream.c.o
+[13/49] Building C object CMakeFiles/base.dir/lzma/7zFile.c.o
+[14/49] Building C object CMakeFiles/base.dir/lzma/CpuArch.c.o
+[15/49] Building C object CMakeFiles/base.dir/lzma/BraIA64.c.o
+[16/49] Building C object CMakeFiles/base.dir/lzma/Lzma86Dec.c.o
+[17/49] Building C object CMakeFiles/base.dir/lzma/Aes.c.o
+[18/49] Building C object CMakeFiles/base.dir/lzma/7zDec.c.o
+[19/49] Building C object CMakeFiles/base.dir/lzma/Lzma86Enc.c.o
+[20/49] Building C object CMakeFiles/base.dir/lzma/Sort.c.o
+[21/49] Building C object CMakeFiles/base.dir/lzma/LzmaLib.c.o
+[22/49] Building C object CMakeFiles/base.dir/lzma/Ppmd7Dec.c.o
+[23/49] Building C object CMakeFiles/base.dir/lzma/Lzma2Dec.c.o
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/Lzma2Dec.c:317:14: warning: implicit conversion from enumeration type 'ELzmaStatus' to different enumeration type 'ELzma2ParseStatus' [-Wenum-conversion]
+      return LZMA_STATUS_FINISHED_WITH_MARK;
+      ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/Lzma2Dec.c:320:14: warning: implicit conversion from enumeration type 'ELzmaStatus' to different enumeration type 'ELzma2ParseStatus' [-Wenum-conversion]
+      return LZMA_STATUS_NOT_FINISHED;
+      ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/Lzma2Dec.c:325:16: warning: implicit conversion from enumeration type 'ELzmaStatus' to different enumeration type 'ELzma2ParseStatus' [-Wenum-conversion]
+        return LZMA_STATUS_NEEDS_MORE_INPUT;
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/Lzma2Dec.c:347:16: warning: implicit conversion from enumeration type 'ELzmaStatus' to different enumeration type 'ELzma2ParseStatus' [-Wenum-conversion]
+        return LZMA_STATUS_NOT_FINISHED;
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/Lzma2Dec.c:357:14: warning: implicit conversion from enumeration type 'ELzmaStatus' to different enumeration type 'ELzma2ParseStatus' [-Wenum-conversion]
+      return LZMA_STATUS_NOT_FINISHED;
+      ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/Lzma2Dec.c:365:18: warning: implicit conversion from enumeration type 'ELzmaStatus' to different enumeration type 'ELzma2ParseStatus' [-Wenum-conversion]
+          return LZMA_STATUS_NEEDS_MORE_INPUT;
+          ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/Lzma2Dec.c:384:20: warning: implicit conversion from enumeration type 'ELzmaStatus' to different enumeration type 'ELzma2ParseStatus' [-Wenum-conversion]
+            return LZMA_STATUS_NEEDS_MORE_INPUT;
+            ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/Lzma2Dec.c:421:10: warning: implicit conversion from enumeration type 'ELzmaStatus' to different enumeration type 'ELzma2ParseStatus' [-Wenum-conversion]
+  return LZMA_STATUS_NOT_SPECIFIED;
+  ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~
+8 warnings generated.
+[24/49] Building C object CMakeFiles/base.dir/lzma/XzCrc64Opt.c.o
+[25/49] Building C object CMakeFiles/base.dir/lzma/Xz.c.o
+[26/49] Building C object CMakeFiles/base.dir/lzma/Lzma2Enc.c.o
+[27/49] Building C object CMakeFiles/base.dir/lzma/Ppmd7Enc.c.o
+[28/49] Building C object CMakeFiles/base.dir/lzma/XzCrc64.c.o
+[29/49] Building C object CMakeFiles/base.dir/lzma/LzFind.c.o
+[30/49] Building C object CMakeFiles/base.dir/lzma/Sha256.c.o
+[31/49] Building CXX object CMakeFiles/base.dir/linker/elf_reader.cpp.o
+FAILED: CMakeFiles/base.dir/linker/elf_reader.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/linker/elf_reader.cpp.o -MF CMakeFiles\base.dir\linker\elf_reader.cpp.o.d -o CMakeFiles/base.dir/linker/elf_reader.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/elf_reader.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/elf_reader.cpp:5:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/./../include/linker/elf_reader.h:7:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/./../include/linker/elf_wrapper.h:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:105:1: error: templates must have C++ linkage
+template<class _CharT>  struct _LIBCPP_TEMPLATE_VIS char_traits;
+^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/elf_reader.cpp:5:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/./../include/linker/elf_reader.h:7:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/./../include/linker/elf_wrapper.h:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:106:19: error: explicit specialization of undeclared template struct 'char_traits'
+template<> struct char_traits<char>;
+                  ^          ~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:110:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char16_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:111:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char32_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:112:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<wchar_t>;
+                  ^          ~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:114:1: error: templates must have C++ linkage
+template<class _Tp>     class _LIBCPP_TEMPLATE_VIS allocator;
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/elf_reader.cpp:5:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/./../include/linker/elf_reader.h:7:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/./../include/linker/elf_wrapper.h:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:60: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                           ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:131:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[32/49] Building C object CMakeFiles/base.dir/lzma/XzIn.c.o
+[33/49] Building CXX object CMakeFiles/base.dir/linker/mydlfcn.cpp.o
+FAILED: CMakeFiles/base.dir/linker/mydlfcn.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/linker/mydlfcn.cpp.o -MF CMakeFiles\base.dir\linker\mydlfcn.cpp.o.d -o CMakeFiles/base.dir/linker/mydlfcn.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/mydlfcn.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/mydlfcn.cpp:5:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/./../include/linker/mydlfcn.h:9:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:641:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:105:1: error: templates must have C++ linkage
+template<class _CharT>  struct _LIBCPP_TEMPLATE_VIS char_traits;
+^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/mydlfcn.cpp:5:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/./../include/linker/mydlfcn.h:9:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:641:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:106:19: error: explicit specialization of undeclared template struct 'char_traits'
+template<> struct char_traits<char>;
+                  ^          ~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:110:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char16_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:111:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char32_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:112:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<wchar_t>;
+                  ^          ~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:114:1: error: templates must have C++ linkage
+template<class _Tp>     class _LIBCPP_TEMPLATE_VIS allocator;
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/mydlfcn.cpp:5:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/linker/./../include/linker/mydlfcn.h:9:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:641:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:60: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                           ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:131:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[34/49] Building C object CMakeFiles/base.dir/lzma/Ppmd7.c.o
+[35/49] Building C object CMakeFiles/base.dir/lzma/XzEnc.c.o
+[36/49] Building C object CMakeFiles/base.dir/lzma/7zArcIn.c.o
+[37/49] Building CXX object CMakeFiles/base.dir/threads.cpp.o
+FAILED: CMakeFiles/base.dir/threads.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/threads.cpp.o -MF CMakeFiles\base.dir\threads.cpp.o.d -o CMakeFiles/base.dir/threads.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/threads.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/threads.cpp:21:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/macros.h:12:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:105:1: error: templates must have C++ linkage
+template<class _CharT>  struct _LIBCPP_TEMPLATE_VIS char_traits;
+^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/threads.cpp:21:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/macros.h:12:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:106:19: error: explicit specialization of undeclared template struct 'char_traits'
+template<> struct char_traits<char>;
+                  ^          ~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:110:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char16_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:111:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char32_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:112:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<wchar_t>;
+                  ^          ~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:114:1: error: templates must have C++ linkage
+template<class _Tp>     class _LIBCPP_TEMPLATE_VIS allocator;
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/threads.cpp:21:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/macros.h:12:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:60: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                           ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:131:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[38/49] Building C object CMakeFiles/base.dir/lzma/XzDec.c.o
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/XzDec.c:403:13: warning: implicit conversion from enumeration type 'ELzmaStatus' to different enumeration type 'ECoderStatus' [-Wenum-conversion]
+  *status = status2;
+          ~ ^~~~~~~
+1 warning generated.
+[39/49] Building CXX object CMakeFiles/base.dir/bionic/system_property/prop_info.cpp.o
+FAILED: CMakeFiles/base.dir/bionic/system_property/prop_info.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/bionic/system_property/prop_info.cpp.o -MF CMakeFiles\base.dir\bionic\system_property\prop_info.cpp.o.d -o CMakeFiles/base.dir/bionic/system_property/prop_info.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp:30:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:639:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:57:1: error: templates must have C++ linkage
+template<class _Ep>
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp:30:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:639:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:99:7: error: no template named 'initializer_list'
+begin(initializer_list<_Ep> __il) _NOEXCEPT
+      ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:95:1: error: templates must have C++ linkage
+template<class _Ep>
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp:30:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:639:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:108:5: error: no template named 'initializer_list'
+end(initializer_list<_Ep> __il) _NOEXCEPT
+    ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:104:1: error: templates must have C++ linkage
+template<class _Ep>
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp:30:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:24:1: error: templates must have C++ linkage
+template <class _Tp> struct _LIBCPP_TEMPLATE_VIS tuple_size;
+^~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp:30:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:27:1: error: templates must have C++ linkage
+template <class _Tp, class...>
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp:30:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:34:38: error: use of undeclared identifier 'tuple_size'
+    integral_constant<size_t, sizeof(tuple_size<_Tp>)>>>
+                                     ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:31:29: error: explicit specialization of undeclared template struct 'tuple_size'
+struct _LIBCPP_TEMPLATE_VIS tuple_size<__enable_if_tuple_size_imp<
+                            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:30:1: error: templates must have C++ linkage
+template <class _Tp>
+^~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp:30:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:35:40: error: no template named 'tuple_size'
+    : public integral_constant<size_t, tuple_size<_Tp>::value> {};
+                                       ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:41:38: error: use of undeclared identifier 'tuple_size'
+    integral_constant<size_t, sizeof(tuple_size<_Tp>)>>>
+                                     ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:38:29: error: explicit specialization of undeclared template struct 'tuple_size'
+struct _LIBCPP_TEMPLATE_VIS tuple_size<__enable_if_tuple_size_imp<
+                            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:37:1: error: templates must have C++ linkage
+template <class _Tp>
+^~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp:30:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:42:40: error: no template named 'tuple_size'
+    : public integral_constant<size_t, tuple_size<_Tp>::value> {};
+                                       ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:47:38: error: use of undeclared identifier 'tuple_size'
+    integral_constant<size_t, sizeof(tuple_size<_Tp>)>>>
+                                     ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:45:29: error: explicit specialization of undeclared template struct 'tuple_size'
+struct _LIBCPP_TEMPLATE_VIS tuple_size<__enable_if_tuple_size_imp<
+                            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:44:1: error: templates must have C++ linkage
+template <class _Tp>
+^~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/system_property/prop_info.cpp:30:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:48:40: error: no template named 'tuple_size'
+    : public integral_constant<size_t, tuple_size<_Tp>::value> {};
+                                       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[40/49] Building CXX object CMakeFiles/base.dir/procinfo/process.cpp.o
+FAILED: CMakeFiles/base.dir/procinfo/process.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/procinfo/process.cpp.o -MF CMakeFiles\base.dir\procinfo\process.cpp.o.d -o CMakeFiles/base.dir/procinfo/process.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/procinfo/process.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/procinfo/process.cpp:17:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/procinfo/process.h:25:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/memory:664:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:105:1: error: templates must have C++ linkage
+template<class _CharT>  struct _LIBCPP_TEMPLATE_VIS char_traits;
+^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/procinfo/process.cpp:17:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/procinfo/process.h:25:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/memory:664:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:106:19: error: explicit specialization of undeclared template struct 'char_traits'
+template<> struct char_traits<char>;
+                  ^          ~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:110:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char16_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:111:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char32_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:112:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<wchar_t>;
+                  ^          ~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:114:1: error: templates must have C++ linkage
+template<class _Tp>     class _LIBCPP_TEMPLATE_VIS allocator;
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/procinfo/process.cpp:17:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/procinfo/process.h:25:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/memory:664:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:60: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                           ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:131:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[41/49] Building CXX object CMakeFiles/base.dir/stringprintf.cpp.o
+FAILED: CMakeFiles/base.dir/stringprintf.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/stringprintf.cpp.o -MF CMakeFiles\base.dir\stringprintf.cpp.o.d -o CMakeFiles/base.dir/stringprintf.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/stringprintf.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/stringprintf.cpp:17:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/stringprintf.h:20:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:641:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:105:1: error: templates must have C++ linkage
+template<class _CharT>  struct _LIBCPP_TEMPLATE_VIS char_traits;
+^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/stringprintf.cpp:17:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/stringprintf.h:20:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:641:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:106:19: error: explicit specialization of undeclared template struct 'char_traits'
+template<> struct char_traits<char>;
+                  ^          ~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:110:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char16_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:111:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char32_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:112:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<wchar_t>;
+                  ^          ~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:114:1: error: templates must have C++ linkage
+template<class _Tp>     class _LIBCPP_TEMPLATE_VIS allocator;
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/stringprintf.cpp:17:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/stringprintf.h:20:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:641:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:60: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                           ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:131:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[42/49] Building CXX object CMakeFiles/base.dir/bionic/ndk_port.cpp.o
+FAILED: CMakeFiles/base.dir/bionic/ndk_port.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/bionic/ndk_port.cpp.o -MF CMakeFiles\base.dir\bionic\ndk_port.cpp.o.d -o CMakeFiles/base.dir/bionic/ndk_port.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp:24:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:639:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:57:1: error: templates must have C++ linkage
+template<class _Ep>
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp:24:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:639:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:99:7: error: no template named 'initializer_list'
+begin(initializer_list<_Ep> __il) _NOEXCEPT
+      ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:95:1: error: templates must have C++ linkage
+template<class _Ep>
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp:24:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:639:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:108:5: error: no template named 'initializer_list'
+end(initializer_list<_Ep> __il) _NOEXCEPT
+    ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/initializer_list:104:1: error: templates must have C++ linkage
+template<class _Ep>
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp:24:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:24:1: error: templates must have C++ linkage
+template <class _Tp> struct _LIBCPP_TEMPLATE_VIS tuple_size;
+^~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp:24:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:27:1: error: templates must have C++ linkage
+template <class _Tp, class...>
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp:24:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:34:38: error: use of undeclared identifier 'tuple_size'
+    integral_constant<size_t, sizeof(tuple_size<_Tp>)>>>
+                                     ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:31:29: error: explicit specialization of undeclared template struct 'tuple_size'
+struct _LIBCPP_TEMPLATE_VIS tuple_size<__enable_if_tuple_size_imp<
+                            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:30:1: error: templates must have C++ linkage
+template <class _Tp>
+^~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp:24:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:35:40: error: no template named 'tuple_size'
+    : public integral_constant<size_t, tuple_size<_Tp>::value> {};
+                                       ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:41:38: error: use of undeclared identifier 'tuple_size'
+    integral_constant<size_t, sizeof(tuple_size<_Tp>)>>>
+                                     ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:38:29: error: explicit specialization of undeclared template struct 'tuple_size'
+struct _LIBCPP_TEMPLATE_VIS tuple_size<__enable_if_tuple_size_imp<
+                            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:37:1: error: templates must have C++ linkage
+template <class _Tp>
+^~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp:24:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:42:40: error: no template named 'tuple_size'
+    : public integral_constant<size_t, tuple_size<_Tp>::value> {};
+                                       ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:47:38: error: use of undeclared identifier 'tuple_size'
+    integral_constant<size_t, sizeof(tuple_size<_Tp>)>>>
+                                     ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:45:29: error: explicit specialization of undeclared template struct 'tuple_size'
+struct _LIBCPP_TEMPLATE_VIS tuple_size<__enable_if_tuple_size_imp<
+                            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:44:1: error: templates must have C++ linkage
+template <class _Tp>
+^~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/bionic/ndk_port.cpp:24:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/bionic/system_property/prop_info.h:33:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/14.0.6/include/stdatomic.h:45:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/atomic:553:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:215:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__locale:14:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__string:57:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/algorithm:642:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:199:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/__tuple:48:40: error: no template named 'tuple_size'
+    : public integral_constant<size_t, tuple_size<_Tp>::value> {};
+                                       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[43/49] Building C object CMakeFiles/base.dir/lzma/LzmaDec.c.o
+[44/49] Building CXX object CMakeFiles/base.dir/hprof_dump.cpp.o
+FAILED: CMakeFiles/base.dir/hprof_dump.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/hprof_dump.cpp.o -MF CMakeFiles\base.dir\hprof_dump.cpp.o.d -o CMakeFiles/base.dir/hprof_dump.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.cpp:4:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.h:8:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/memory:664:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:105:1: error: templates must have C++ linkage
+template<class _CharT>  struct _LIBCPP_TEMPLATE_VIS char_traits;
+^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.cpp:4:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.h:8:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/memory:664:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:106:19: error: explicit specialization of undeclared template struct 'char_traits'
+template<> struct char_traits<char>;
+                  ^          ~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:110:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char16_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:111:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char32_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:112:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<wchar_t>;
+                  ^          ~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:114:1: error: templates must have C++ linkage
+template<class _Tp>     class _LIBCPP_TEMPLATE_VIS allocator;
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.cpp:4:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.h:8:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/memory:664:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:60: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                           ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:131:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[45/49] Building CXX object CMakeFiles/base.dir/procinfo/process_map.cpp.o
+FAILED: CMakeFiles/base.dir/procinfo/process_map.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/procinfo/process_map.cpp.o -MF CMakeFiles\base.dir\procinfo\process_map.cpp.o.d -o CMakeFiles/base.dir/procinfo/process_map.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/procinfo/process_map.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/procinfo/process_map.cpp:17:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/procinfo/process_map.h:20:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:105:1: error: templates must have C++ linkage
+template<class _CharT>  struct _LIBCPP_TEMPLATE_VIS char_traits;
+^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/procinfo/process_map.cpp:17:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/procinfo/process_map.h:20:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:106:19: error: explicit specialization of undeclared template struct 'char_traits'
+template<> struct char_traits<char>;
+                  ^          ~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:110:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char16_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:111:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char32_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:112:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<wchar_t>;
+                  ^          ~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:114:1: error: templates must have C++ linkage
+template<class _Tp>     class _LIBCPP_TEMPLATE_VIS allocator;
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/procinfo/process_map.cpp:17:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/procinfo/process_map.h:20:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:60: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                           ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:131:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[46/49] Building CXX object CMakeFiles/base.dir/base.cpp.o
+FAILED: CMakeFiles/base.dir/base.cpp.o 
+C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dbase_EXPORTS -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include -IC:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./lzma -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Wextra -Wexit-time-destructors -D_FILE_OFFSET_BITS=64 -D_7ZIP_ST -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484 -Oz -std=gnu++17 -MD -MT CMakeFiles/base.dir/base.cpp.o -MF CMakeFiles\base.dir\base.cpp.o.d -o CMakeFiles/base.dir/base.cpp.o -c C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/base.cpp
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/base.cpp:5:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.h:8:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/memory:664:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:105:1: error: templates must have C++ linkage
+template<class _CharT>  struct _LIBCPP_TEMPLATE_VIS char_traits;
+^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/base.cpp:5:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.h:8:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/memory:664:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:106:19: error: explicit specialization of undeclared template struct 'char_traits'
+template<> struct char_traits<char>;
+                  ^          ~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:110:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char16_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:111:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<char32_t>;
+                  ^          ~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:112:19: error: explicit specialization of non-template struct 'char_traits'
+template<> struct char_traits<wchar_t>;
+                  ^          ~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:114:1: error: templates must have C++ linkage
+template<class _Tp>     class _LIBCPP_TEMPLATE_VIS allocator;
+^~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:38:1: note: extern "C" language linkage specification begins here
+__BEGIN_DECLS
+^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/sys/cdefs.h:46:23: note: expanded from macro '__BEGIN_DECLS'
+#define __BEGIN_DECLS extern "C" {
+                      ^
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/base.cpp:5:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/hprof_dump.h:8:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/memory:664:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/utility:203:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/cstring:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/string.h:60:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/string.h:41:
+In file included from C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/./include/strings.h:19:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/sstream:173:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ostream:138:
+In file included from C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/ios:214:
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:116:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:119:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:121:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:123:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:125:61: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT> >
+                                                            ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:128:60: error: expected unqualified-id
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                           ^
+C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1/iosfwd:131:52: error: expected ',' or '>' in template-parameter-list
+template <class _CharT, class _Traits = char_traits<_CharT>,
+                                                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[47/49] Building C object CMakeFiles/base.dir/lzma/LzmaEnc.c.o
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/LzmaEnc.c:1502:9: warning: '&&' within '||' [-Wlogical-op-parentheses]
+        && matchByte == curByte
+        ^~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/nativelib/src/main/cpp/lzma/LzmaEnc.c:1502:9: note: place parentheses around the '&&' expression to silence this warning
+        && matchByte == curByte
+        ^
+                               )
+1 warning generated.
+[48/49] Building CXX object CMakeFiles/base.dir/strings.cpp.o
+ninja: build stopped: subcommand failed.

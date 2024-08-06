@@ -25,7 +25,7 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-internal object OOMFileManager {
+ object OOMFileManager {
   private const val TIME_FORMAT = "yyyy-MM-dd_HH-mm-ss_SSS"
 
   private lateinit var mRootDirInvoker: (String) -> File

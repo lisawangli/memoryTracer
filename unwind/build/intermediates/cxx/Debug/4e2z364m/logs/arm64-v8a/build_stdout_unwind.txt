@@ -1,0 +1,162 @@
+ninja: Entering directory `C:\Users\ts\AndroidStudioProjects\memoryTracer\unwind\.cxx\Debug\4e2z364m\arm64-v8a'
+[1/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/MemoryMte.cpp.o
+[2/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/DwarfMemory.cpp.o
+[3/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/Log.cpp.o
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/Log.cpp:56:19: warning: data argument not used by format string [-Wformat-extra-args]
+    LOGD(LOG_TAG, real_format.c_str(), args);
+         ~~~~~~~  ^
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/Log.cpp:22:67: note: expanded from macro 'LOGD'
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/Log.cpp:70:27: warning: data argument not used by format string [-Wformat-extra-args]
+  LOGE( "libunwindstack", format, args);
+        ~~~~~~~~~~~~~~~~  ^
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/Log.cpp:23:67: note: expanded from macro 'LOGE'
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+                                                                  ^~~~~~~~~~~
+2 warnings generated.
+[4/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/LocalUnwinder.cpp.o
+[5/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/DexFiles.cpp.o
+[6/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/MapInfo.cpp.o
+[7/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/DwarfOp.cpp.o
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/DwarfOp.cpp:1439:5: warning: array designators are a C99 extension [-Wc99-designator]
+    [OP_ILLEGAL] = nullptr,
+    ^~~~~~~~~~~~
+1 warning generated.
+[8/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/Global.cpp.o
+[9/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/JitDebug.cpp.o
+[10/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/RegsArm.cpp.o
+[11/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/DwarfEhFrameWithHdr.cpp.o
+[12/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/Memory.cpp.o
+[13/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/ElfInterfaceArm.cpp.o
+[14/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/ArmExidx.cpp.o
+[15/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/Maps.cpp.o
+[16/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/Elf.cpp.o
+[17/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/ElfInterface.cpp.o
+[18/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/RegsArm64.cpp.o
+[19/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/DwarfCfa.cpp.o
+[20/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/RegsMips64.cpp.o
+[21/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/DwarfSection.cpp.o
+[22/46] Building CXX object CMakeFiles/unwind.dir/libbacktrace/ThreadEntry.cpp.o
+[23/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/RegsX86.cpp.o
+[24/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/Regs.cpp.o
+[25/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/RegsX86_64.cpp.o
+[26/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/Symbols.cpp.o
+[27/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/RegsMips.cpp.o
+[28/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/ThreadEntry.cpp.o
+[29/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/tools/unwind.cpp.o
+[30/46] Building CXX object CMakeFiles/unwind.dir/dexfile_support/dex_file_supp.cpp.o
+[31/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/DexFile.cpp.o
+[32/46] Building CXX object CMakeFiles/unwind.dir/fast_unwind/fast_unwind.cpp.o
+[33/46] Building CXX object CMakeFiles/unwind.dir/libbacktrace/BacktraceCurrent.cpp.o
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libbacktrace/BacktraceCurrent.cpp:39:9: warning: 'LOG_TAG' macro redefined [-Wmacro-redefined]
+#define LOG_TAG "BACKTRACE" // 这里替换成你的日志标签
+        ^
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libbacktrace/BacktraceAsyncSafeLog.h:22:9: note: previous definition is here
+#define LOG_TAG "Backtrace" // 这里替换成你的日志标签
+        ^
+1 warning generated.
+[34/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/tools/unwind_symbols.cpp.o
+[35/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/ThreadUnwinder.cpp.o
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ThreadUnwinder.cpp:91:34: warning: ISO C++ requires field designators to be specified in declaration order; field '' will be initialized after field 'sa_flags' [-Wreorder-init-list]
+                                 .sa_flags = SA_RESTART | SA_SIGINFO | SA_ONSTACK};
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ThreadUnwinder.cpp:90:34: note: previous initialization for field '' is here
+  struct sigaction new_action = {.sa_sigaction = SignalHandler,
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ThreadUnwinder.cpp:128:36: warning: ISO C++ requires field designators to be specified in declaration order; field '' will be initialized after field 'sa_flags' [-Wreorder-init-list]
+                                   .sa_flags = SA_RESTART | SA_SIGINFO | SA_ONSTACK};
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ThreadUnwinder.cpp:127:36: note: previous initialization for field '' is here
+    struct sigaction log_action = {.sa_sigaction = SignalLogOnly,
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings generated.
+[36/46] Building CXX object CMakeFiles/unwind.dir/libbacktrace/BacktraceMap.cpp.o
+[37/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/Unwinder.cpp.o
+[38/46] Building CXX object CMakeFiles/unwind.dir/libbacktrace/Backtrace.cpp.o
+[39/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/tools/unwind_reg_info.cpp.o
+[40/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/tools/unwind_info.cpp.o
+[41/46] Building CXX object CMakeFiles/unwind.dir/unwind.cpp.o
+[42/46] Building CXX object CMakeFiles/unwind.dir/libbacktrace/BacktracePtrace.cpp.o
+[43/46] Building CXX object CMakeFiles/unwind.dir/libunwindstack/tools/unwind_for_offline.cpp.o
+[44/46] Building CXX object CMakeFiles/unwind.dir/libbacktrace/UnwindStack.cpp.o
+[45/46] Building CXX object CMakeFiles/unwind.dir/libbacktrace/UnwindStackMap.cpp.o
+[46/46] Linking CXX shared library C:\Users\ts\AndroidStudioProjects\memoryTracer\unwind\build\intermediates\cxx\Debug\4e2z364m\obj\arm64-v8a\libunwind.so
+FAILED: C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/build/intermediates/cxx/Debug/4e2z364m/obj/arm64-v8a/libunwind.so 
+cmd.exe /C "cd . && C:\Users\ts\AppData\Local\Android\Sdk\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --sysroot=C:/Users/ts/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libunwind.so -o C:\Users\ts\AndroidStudioProjects\memoryTracer\unwind\build\intermediates\cxx\Debug\4e2z364m\obj\arm64-v8a\libunwind.so CMakeFiles/unwind.dir/libunwindstack/ArmExidx.cpp.o CMakeFiles/unwind.dir/libunwindstack/DexFiles.cpp.o CMakeFiles/unwind.dir/libunwindstack/DwarfCfa.cpp.o CMakeFiles/unwind.dir/libunwindstack/DwarfEhFrameWithHdr.cpp.o CMakeFiles/unwind.dir/libunwindstack/DwarfMemory.cpp.o CMakeFiles/unwind.dir/libunwindstack/DwarfOp.cpp.o CMakeFiles/unwind.dir/libunwindstack/DwarfSection.cpp.o CMakeFiles/unwind.dir/libunwindstack/Elf.cpp.o CMakeFiles/unwind.dir/libunwindstack/ElfInterface.cpp.o CMakeFiles/unwind.dir/libunwindstack/ElfInterfaceArm.cpp.o CMakeFiles/unwind.dir/libunwindstack/Global.cpp.o CMakeFiles/unwind.dir/libunwindstack/JitDebug.cpp.o CMakeFiles/unwind.dir/libunwindstack/Log.cpp.o CMakeFiles/unwind.dir/libunwindstack/MapInfo.cpp.o CMakeFiles/unwind.dir/libunwindstack/Maps.cpp.o CMakeFiles/unwind.dir/libunwindstack/Memory.cpp.o CMakeFiles/unwind.dir/libunwindstack/MemoryMte.cpp.o CMakeFiles/unwind.dir/libunwindstack/LocalUnwinder.cpp.o CMakeFiles/unwind.dir/libunwindstack/Regs.cpp.o CMakeFiles/unwind.dir/libunwindstack/RegsArm.cpp.o CMakeFiles/unwind.dir/libunwindstack/RegsArm64.cpp.o CMakeFiles/unwind.dir/libunwindstack/RegsX86.cpp.o CMakeFiles/unwind.dir/libunwindstack/RegsX86_64.cpp.o CMakeFiles/unwind.dir/libunwindstack/RegsMips.cpp.o CMakeFiles/unwind.dir/libunwindstack/RegsMips64.cpp.o CMakeFiles/unwind.dir/libunwindstack/Unwinder.cpp.o CMakeFiles/unwind.dir/libunwindstack/Symbols.cpp.o CMakeFiles/unwind.dir/libunwindstack/DexFile.cpp.o CMakeFiles/unwind.dir/libunwindstack/ThreadEntry.cpp.o CMakeFiles/unwind.dir/libunwindstack/ThreadUnwinder.cpp.o CMakeFiles/unwind.dir/libunwindstack/tools/unwind.cpp.o CMakeFiles/unwind.dir/libunwindstack/tools/unwind_for_offline.cpp.o CMakeFiles/unwind.dir/libunwindstack/tools/unwind_info.cpp.o CMakeFiles/unwind.dir/libunwindstack/tools/unwind_reg_info.cpp.o CMakeFiles/unwind.dir/libunwindstack/tools/unwind_symbols.cpp.o CMakeFiles/unwind.dir/dexfile_support/dex_file_supp.cpp.o CMakeFiles/unwind.dir/libbacktrace/Backtrace.cpp.o CMakeFiles/unwind.dir/libbacktrace/BacktraceCurrent.cpp.o CMakeFiles/unwind.dir/libbacktrace/BacktraceMap.cpp.o CMakeFiles/unwind.dir/libbacktrace/BacktracePtrace.cpp.o CMakeFiles/unwind.dir/libbacktrace/ThreadEntry.cpp.o CMakeFiles/unwind.dir/libbacktrace/UnwindStack.cpp.o CMakeFiles/unwind.dir/libbacktrace/UnwindStackMap.cpp.o CMakeFiles/unwind.dir/fast_unwind/fast_unwind.cpp.o CMakeFiles/unwind.dir/unwind.cpp.o  -landroid  -llog  -latomic -lm && cd ."
+ld: error: undefined symbol: android::base::StringPrintf(char const*, ...)
+>>> referenced by ArmExidx.cpp:39 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ArmExidx.cpp:39)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ArmExidx.cpp.o:(unwindstack::ArmExidx::LogRawData())
+>>> referenced by ArmExidx.cpp:215 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ArmExidx.cpp:215)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ArmExidx.cpp.o:(unwindstack::ArmExidx::DecodePrefix_10_00(unsigned char))
+>>> referenced by ArmExidx.cpp:300 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ArmExidx.cpp:300)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ArmExidx.cpp.o:(unwindstack::ArmExidx::DecodePrefix_10_10(unsigned char))
+>>> referenced 35 more times
+
+ld: error: undefined symbol: CrcGenerateTable
+>>> referenced by ElfInterface.cpp:79 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ElfInterface.cpp:79)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ElfInterface.cpp.o:(unwindstack::ElfInterface::CreateGnuDebugdataMemory())
+
+ld: error: undefined symbol: Crc64GenerateTable
+>>> referenced by ElfInterface.cpp:80 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ElfInterface.cpp:80)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ElfInterface.cpp.o:(unwindstack::ElfInterface::CreateGnuDebugdataMemory())
+
+ld: error: undefined symbol: XzUnpacker_Construct
+>>> referenced by ElfInterface.cpp:114 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ElfInterface.cpp:114)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ElfInterface.cpp.o:(unwindstack::ElfInterface::CreateGnuDebugdataMemory())
+
+ld: error: undefined symbol: XzUnpacker_Free
+>>> referenced by ElfInterface.cpp:127 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ElfInterface.cpp:127)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ElfInterface.cpp.o:(unwindstack::ElfInterface::CreateGnuDebugdataMemory())
+>>> referenced by ElfInterface.cpp:137 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ElfInterface.cpp:137)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ElfInterface.cpp.o:(unwindstack::ElfInterface::CreateGnuDebugdataMemory())
+
+ld: error: undefined symbol: XzUnpacker_Code
+>>> referenced by ElfInterface.cpp:132 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ElfInterface.cpp:132)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ElfInterface.cpp.o:(unwindstack::ElfInterface::CreateGnuDebugdataMemory())
+
+ld: error: undefined symbol: XzUnpacker_IsStreamWasFinished
+>>> referenced by ElfInterface.cpp:138 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ElfInterface.cpp:138)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ElfInterface.cpp.o:(unwindstack::ElfInterface::CreateGnuDebugdataMemory())
+
+ld: error: undefined symbol: android::base::ReadFileToString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >*, bool)
+>>> referenced by process_map.h:147 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/../../../../../nativelib/src/main/cpp/include/procinfo/process_map.h:147)
+>>>               CMakeFiles/unwind.dir/libunwindstack/Maps.cpp.o:(android::procinfo::ReadMapFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, std::__ndk1::function<void (unsigned long, unsigned long, unsigned short, unsigned long, unsigned long, char const*)> const&))
+
+ld: error: undefined symbol: kwai_process_vm_readv
+>>> referenced by Memory.cpp:98 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/Memory.cpp:98)
+>>>               CMakeFiles/unwind.dir/libunwindstack/Memory.cpp.o:(unwindstack::ProcessVmRead(int, unsigned long, void*, unsigned long))
+
+ld: error: undefined symbol: android::base::StartsWith(std::__ndk1::basic_string_view<char, std::__ndk1::char_traits<char> >, std::__ndk1::basic_string_view<char, std::__ndk1::char_traits<char> >)
+>>> referenced by Unwinder.cpp:178 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/Unwinder.cpp:178)
+>>>               CMakeFiles/unwind.dir/libunwindstack/Unwinder.cpp.o:(unwindstack::Unwinder::Unwind(std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > > > const*, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > > > const*))
+
+ld: error: undefined symbol: android::base::GetThreadId()
+>>> referenced by ThreadUnwinder.cpp:49 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ThreadUnwinder.cpp:49)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ThreadUnwinder.cpp.o:(unwindstack::SignalHandler(int, siginfo*, void*))
+>>> referenced by ThreadUnwinder.cpp:43 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libunwindstack/ThreadUnwinder.cpp:43)
+>>>               CMakeFiles/unwind.dir/libunwindstack/ThreadUnwinder.cpp.o:(unwindstack::SignalLogOnly(int, siginfo*, void*))
+>>> referenced by Backtrace.cpp:111 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/libbacktrace/Backtrace.cpp:111)
+>>>               CMakeFiles/unwind.dir/libbacktrace/Backtrace.cpp.o:(Backtrace::Create(int, int, BacktraceMap*))
+>>> referenced 4 more times
+
+ld: error: undefined symbol: DlFcn::dlopen(char const*, int)
+>>> referenced by dex_file_supp.cpp:68 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/dexfile_support/dex_file_supp.cpp:68)
+>>>               CMakeFiles/unwind.dir/dexfile_support/dex_file_supp.cpp.o:(art_api::dex::TryLoadLibdexfileExternal(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >*))
+>>> referenced by dex_file_supp.cpp:71 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/dexfile_support/dex_file_supp.cpp:71)
+>>>               CMakeFiles/unwind.dir/dexfile_support/dex_file_supp.cpp.o:(art_api::dex::TryLoadLibdexfileExternal(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >*))
+
+ld: error: undefined symbol: DlFcn::dlsym(void*, char const*)
+>>> referenced by dex_file_supp.cpp:85 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/dexfile_support/dex_file_supp.cpp:85)
+>>>               CMakeFiles/unwind.dir/dexfile_support/dex_file_supp.cpp.o:(art_api::dex::TryLoadLibdexfileExternal(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >*))
+>>> referenced by dex_file_supp.cpp:85 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/dexfile_support/dex_file_supp.cpp:85)
+>>>               CMakeFiles/unwind.dir/dexfile_support/dex_file_supp.cpp.o:(art_api::dex::TryLoadLibdexfileExternal(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >*))
+>>> referenced by dex_file_supp.cpp:85 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/dexfile_support/dex_file_supp.cpp:85)
+>>>               CMakeFiles/unwind.dir/dexfile_support/dex_file_supp.cpp.o:(art_api::dex::TryLoadLibdexfileExternal(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >*))
+>>> referenced 5 more times
+
+ld: error: undefined symbol: DlFcn::dlclose(void*)
+>>> referenced by dex_file_supp.cpp:93 (C:/Users/ts/AndroidStudioProjects/memoryTracer/unwind/src/main/cpp/dexfile_support/dex_file_supp.cpp:93)
+>>>               CMakeFiles/unwind.dir/dexfile_support/dex_file_supp.cpp.o:(art_api::dex::TryLoadLibdexfileExternal(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >*))
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
