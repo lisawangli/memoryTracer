@@ -3,6 +3,7 @@ package com.source.hmileak.util
 import android.app.ActivityManager
 import android.content.Context
 import android.os.Process
+import com.source.hmileak.CommonConfig
 import com.source.hmileak.base.Config
 import java.io.File
 
@@ -16,9 +17,9 @@ enum class Abi {
 private var mCurrentAbi: Abi = Abi.UNKNOWN
 private var mProcessName: String? = null
 
-fun isMainProcess(config: Config) = config.application.packageName == getProcessName(config)
+fun isMainProcess(config: CommonConfig) = config.application.packageName == getProcessName(config)
 
-fun getProcessName(config: Config): String? {
+fun getProcessName(config: CommonConfig): String? {
     return mProcessName
         ?: getProcessNameByAms(config)?.also { mProcessName = it }
         ?: getProcessNameByProc()?.also { mProcessName = it }
@@ -31,7 +32,7 @@ private fun getProcessNameByProc(): String? {
         null
     }
 }
-private fun getProcessNameByAms(config: Config):String?{
+private fun getProcessNameByAms(config: CommonConfig):String?{
     try {
         val activityManager = config.application.getSystemService(Context.ACTIVITY_SERVICE)
                 as ActivityManager

@@ -2,17 +2,12 @@ package com.source.hmileak.base
 
 import android.app.Application
 import android.os.Handler
+import com.source.hmileak.Monitor
 import com.source.hmileak.util.GlobalThreadPool
 import com.source.hmileak.util.async
 import java.util.concurrent.Callable
 
-abstract class LooperMonitor<T> : Callable<LooperMonitor.State> {
-
-    private lateinit var mConfig:Config;
-
-    open fun init(config: Config){
-        this.mConfig = config;
-    }
+abstract class LooperMonitor<T> : Monitor<T>(), Callable<LooperMonitor.State> {
 
     companion object{
         private const val DEFAULT_LOOP_INTERVAL = 1000L
@@ -27,35 +22,34 @@ abstract class LooperMonitor<T> : Callable<LooperMonitor.State> {
                 return
             if (mIsLoopStop)
                 return
-
+            getLoopHandler().removeCallbacks(this)
+            getLoopHandler().postDelayed(this, getLoopInterval())
         }
     }
 
     open fun startLoop(cleanData:Boolean = true,postAtFront:Boolean = true,delayMillis:Long = 0L){
         if (cleanData)
-            getLooperHandler().removeCallbacks(mLooperMonitor);
+            getLoopHandler().removeCallbacks(mLooperMonitor);
         if (postAtFront)
-            getLooperHandler().postAtFrontOfQueue(mLooperMonitor)
+            getLoopHandler().postAtFrontOfQueue(mLooperMonitor)
         else
-            getLooperHandler().postDelayed(mLooperMonitor,delayMillis)
+            getLoopHandler().postDelayed(mLooperMonitor,delayMillis)
         mIsLoopStop = false
+    }
+
+
+
+    open fun stopLoop(){
+        mIsLoopStop = true
+        getLoopHandler().removeCallbacks(mLooperMonitor)
     }
 
     protected open fun getLoopInterval(): Long {
         return DEFAULT_LOOP_INTERVAL
     }
 
-    open fun stopLoop(){
-        mIsLoopStop = true
-        getLooperHandler().removeCallbacks(mLooperMonitor)
-    }
-
-    protected open fun getLooperHandler() : Handler  {
-        return mConfig.loopHandlerInvoker();
-    }
-
-    protected open fun getApplication() : Application  {
-        return mConfig.application;
+    protected open fun getLoopHandler(): Handler {
+        return commonConfig.loopHandlerInvoker()
     }
 
     sealed class State{

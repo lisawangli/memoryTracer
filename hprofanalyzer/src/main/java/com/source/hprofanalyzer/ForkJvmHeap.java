@@ -1,6 +1,7 @@
 package com.source.hprofanalyzer;
 
 import android.os.Debug;
+import android.util.Log;
 
 import java.io.IOException;
 
@@ -29,12 +30,19 @@ public class ForkJvmHeap implements HeapDumper{
 
     @Override
     public boolean dump(String path) {
+        Log.e("ForkJvmHeap","==========dump=========");
         init();
+        Log.e("ForkJvmHeap","==========dump=====init====");
+
         boolean dumpRes = false;
         int pid = suspendAndFork();
+        Log.e("ForkJvmHeap","==========dump=====suspendAndFork====");
+
         if (pid==0){
             try {
                 Debug.dumpHprofData(path);
+                Log.e("ForkJvmHeap","==========dump=====dumpHprofData====");
+
                 exitProcess();
             } catch (IOException e) {
                 e.printStackTrace();

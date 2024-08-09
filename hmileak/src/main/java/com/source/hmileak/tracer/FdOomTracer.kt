@@ -19,14 +19,10 @@ class FdOomTracer : OOMTracker() {
     private var mLastCount = 0
     private var mOverThresholdCount = 0
 
-    private var mConfig: Config? = null
-    override fun init(config: Config) {
-        this.mConfig = config
-    }
 
     override fun track(): Boolean {
         var fdCount = getFdCount()
-        if (fdCount > mConfig!!.fdThreshold && fdCount>=mLastCount- FD_COUNT_THRESHOLD_GAP) {
+        if (fdCount > monitorConfig!!.fdThreshold && fdCount>=mLastCount- FD_COUNT_THRESHOLD_GAP) {
             mOverThresholdCount++
             Log.i("FdOOmTracer","[meet condition] "
                     + "overThresholdCount: $mOverThresholdCount"
@@ -36,7 +32,7 @@ class FdOomTracer : OOMTracker() {
             reset()
         }
         mLastCount = fdCount
-        return mOverThresholdCount >= mConfig!!.maxOverThresholdCount
+        return mOverThresholdCount >= monitorConfig!!.maxOverThresholdCount
     }
 
     override fun reason() = "reason_fd_oom"
@@ -52,7 +48,7 @@ class FdOomTracer : OOMTracker() {
 
     private fun dumpFdIfNeed() {
         Log.i("FDOOMTracer","over threshold dumpFdIfneed")
-        if (mOverThresholdCount>mConfig!!.maxOverThresholdCount)
+        if (mOverThresholdCount>monitorConfig!!.maxOverThresholdCount)
             return
         var fdNames = kotlin.runCatching {
             File("/proc/self/fd").listFiles()

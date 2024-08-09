@@ -13,14 +13,10 @@ class HeapOOMTracker : OOMTracker() {
 
     private var mlastHeapRatio =0.0f
     private var mOverThresholdCount  = 0
-    private var mConfig:Config? = null
-    override fun init(config: Config) {
-        this.mConfig = config
-    }
 
     override fun track(): Boolean {
         val heapRatio = SystemInfo.javaHeap.rate
-        if (heapRatio>mConfig!!.heapThreshold && heapRatio >= mlastHeapRatio - HEAP_RATIO_THRESHOLD_GAP) {
+        if (heapRatio>monitorConfig!!.heapThreshold && heapRatio >= mlastHeapRatio - HEAP_RATIO_THRESHOLD_GAP) {
             mOverThresholdCount++
             Log.i("HeapOOMTracker","[meet condition] "
                     + "overThresholdCount: $mOverThresholdCount"
@@ -31,7 +27,7 @@ class HeapOOMTracker : OOMTracker() {
             reset()
         }
         mlastHeapRatio = heapRatio
-        return mOverThresholdCount>= mConfig!!.maxOverThresholdCount
+        return mOverThresholdCount>= monitorConfig!!.maxOverThresholdCount
     }
 
     override fun reason() = "reason_heap_oom"

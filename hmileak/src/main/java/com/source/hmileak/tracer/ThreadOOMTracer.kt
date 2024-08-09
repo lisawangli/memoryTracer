@@ -14,14 +14,11 @@ class ThreadOOMTracer : OOMTracker() {
 
     private var mLastThreadCount = 0
     private var mOverThresholdCount = 0
-    private var mConfig:Config? = null
-    override fun init(config: Config) {
-        this.mConfig = config
-    }
+
 
     override fun track(): Boolean {
         var threadCount = getThreadCount()
-        if (threadCount>mConfig!!.threadThreshold && threadCount>=mLastThreadCount- THREAD_COUNT_THRESHOLD_GAP) {
+        if (threadCount>monitorConfig!!.threadThreshold && threadCount>=mLastThreadCount- THREAD_COUNT_THRESHOLD_GAP) {
             mOverThresholdCount++
             Log.i("ThreadOOMTracer",
                 "[meet condition] "
@@ -32,7 +29,7 @@ class ThreadOOMTracer : OOMTracker() {
             reset()
         }
         mLastThreadCount = threadCount
-        return mOverThresholdCount>=mConfig!!.maxOverThresholdCount
+        return mOverThresholdCount>=monitorConfig!!.maxOverThresholdCount
     }
 
     override fun reason()= "reason_thread_oom"
@@ -48,7 +45,7 @@ class ThreadOOMTracer : OOMTracker() {
 
     private fun dumpThreadIfNeed() {
         Log.i("ThreadOOMTracer", "over threshold dumpThreadIfNeed")
-        if (mOverThresholdCount>mConfig!!.maxOverThresholdCount)
+        if (mOverThresholdCount>monitorConfig!!.maxOverThresholdCount)
             return
         var threadNames = kotlin.runCatching { File("/proc/self/task").listFiles() }
             .getOrElse {

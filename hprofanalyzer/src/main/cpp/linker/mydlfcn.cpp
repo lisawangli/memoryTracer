@@ -49,40 +49,48 @@
         if (android_api_ < __ANDROID_API_N__) {
             return ::dlopen(lib_name, flags);
         }
-        if (android_api_>=__ANDROID_API_O__){
+        if (android_api_ >= __ANDROID_API_O__) {
             void *handle = ::dlopen("libdl.so", RTLD_NOW);
             auto __loader_dlopen = reinterpret_cast<__loader_dlopen_fn>(
                     ::dlsym(handle, "__loader_dlopen"));
-            if (android_api_<__ANDROID_API_Q__){
-                return __loader_dlopen(lib_name,flags,(void*)dlerror);
+            if (android_api_ < __ANDROID_API_Q__) {
+                return __loader_dlopen(lib_name, flags, (void *)dlerror);
             } else {
-                handle = __loader_dlopen(lib_name,flags,(void *)dlerror);
-                if (handle== nullptr){
+                handle = __loader_dlopen(lib_name, flags, (void *)dlerror);
+                if (handle == nullptr) {
+                    // Android Q added "runtime" namespace
                     dl_iterate_data data{};
                     data.info_.dlpi_name = lib_name;
-                    dl_iterate_phdr_wrapper(dl_iterate_callback,&data);
-                    handle = __loader_dlopen(lib_name,flags,(void *)data.info_.dlpi_addr);
+                    dl_iterate_phdr_wrapper(dl_iterate_callback, &data);
+                    handle = __loader_dlopen(lib_name, flags, (void *)data.info_.dlpi_addr);
                 }
                 return handle;
             }
         }
+        // __ANDROID_API_N__ && __ANDROID_API_N_MR1__
         auto *data = new dl_iterate_data();
         data->info_.dlpi_name = lib_name;
-        dl_iterate_phdr_wrapper(dl_iterate_callback,data);
+        dl_iterate_phdr_wrapper(dl_iterate_callback, data);
+
         return data;
     }
 
     void *DlFcn::dlsym(void *handle, const char *name) {
-        auto is_android_N = []()->bool {
-            return android_api_==__ANDROID_API_N__||
-            android_api_==__ANDROID_API_N_MR1__;
+        auto is_android_N = []() -> bool {
+            return android_api_ == __ANDROID_API_N__ ||
+                   android_api_ == __ANDROID_API_N_MR1__;
         };
-        if (!is_android_N)
-            return ::dlsym(handle,name);
-        auto *data =  (DlFcn::dl_iterate_data *)handle;
-        if (!data->info_.dlpi_name||data->info_.dlpi_name[0]!='/'){
+
+        if (!is_android_N()) {
+            return ::dlsym(handle, name);
+        }
+
+        // __ANDROID_API_N__ && __ANDROID_API_N_MR1__
+        auto *data = (dl_iterate_data *)handle;
+        if (!data->info_.dlpi_name || data->info_.dlpi_name[0] != '/') {
             return nullptr;
         }
+
         ElfReader elf_reader(std::make_shared<FileElfWrapper>(data->info_.dlpi_name));
         if (!elf_reader.Init()) {
             return nullptr;
@@ -92,10 +100,12 @@
     }
 
     int DlFcn::dlclose(void *handle) {
-        if (android_api_!=__ANDROID_API_N__&&android_api_!=__ANDROID_API_N_MR1__){
+        if (android_api_ != __ANDROID_API_N__ &&
+            android_api_ != __ANDROID_API_N_MR1__) {
             return ::dlclose(handle);
         }
-        delete(dl_iterate_data *)handle;
+        // __ANDROID_API_N__ && __ANDROID_API_N_MR1__
+        delete (dl_iterate_data *)handle;
         return 0;
     }
 

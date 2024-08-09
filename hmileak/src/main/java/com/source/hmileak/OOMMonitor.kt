@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
+import com.source.hmileak.MonitorManager.getApplication
 import com.source.hmileak.base.Config
 import com.source.hmileak.base.LooperMonitor
 import com.source.hmileak.base.currentActivity
@@ -28,7 +29,7 @@ import com.source.hprofanalyzer.util.SystemInfo
 import java.io.File
 import java.util.Date
 
-object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
+public object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
 
     private val mOOMTracers = mutableListOf(FdOomTracer(),HugeMemoryTracer(),HeapOOMTracker(),PhysicalMemoryTracer(),ThreadOOMTracer())
 
@@ -50,33 +51,33 @@ object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
     private var mHasProcessOldHprof = false
     lateinit var mConfig:Config
 
-    override fun init(config: Config) {
-        super.init(config)
+    override fun init(commonConfig: CommonConfig,config: Config) {
+        super.init(commonConfig,config)
         mConfig = config;
         mMonitorInitTime = SystemClock.elapsedRealtime()
-        OOMFileManager.init(mConfig.rootFileInvoker)
+        OOMFileManager.init(commonConfig.rootFileInvoker)
         for (oomTracker in mOOMTracers) {
-            oomTracker.init(config)
+            oomTracker.init(commonConfig,config)
         }
 
        getApplication().registerProcessLifecycleObserver(this)
     }
 
     override fun startLoop(cleanData: Boolean, postAtFront: Boolean, delayMillis: Long) {
-        if (!isMainProcess(mConfig)){
+        if (!isMainProcess(commonConfig)){
             return
         }
         if (mIsLoopStarted)
             return
         mIsLoopStarted = true
         super.startLoop(cleanData, postAtFront, delayMillis)
-        getLooperHandler().postDelayed({ async { processOldHprofFile() } }, delayMillis)
+        getLoopHandler().postDelayed({ async { processOldHprofFile() } }, delayMillis)
 
     }
 
 
     override fun stopLoop() {
-        if (!isMainProcess(mConfig)){
+        if (!isMainProcess(commonConfig)){
             return
         }
 

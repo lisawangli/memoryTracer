@@ -1,8 +1,10 @@
 package com.source.hmileak.base
 
-abstract class OOMTracker {
+import com.source.hmileak.Monitor
 
-    abstract fun init(config: Config)
+abstract class OOMTracker : Monitor<Config>() {
+
+//    abstract fun init(config: Config)
     abstract fun track(): Boolean
 
     abstract fun reason():String

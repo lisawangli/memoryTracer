@@ -13,17 +13,13 @@ class PhysicalMemoryTracer : OOMTracker(){
         private const val TAG:String = "PhysicalMemoryTracer"
     }
 
-    private var mConfig:Config? = null
-    override fun init(config: Config) {
-        this.mConfig = config
-    }
 
     override fun track(): Boolean {
        var info = SystemInfo.memInfo
         when{
-            info.rate < mConfig!!.deviceMemoryThreshold -> {
+            info.rate < monitorConfig!!.deviceMemoryThreshold -> {
                 Log.e(TAG, "oom meminfo.rate < " +
-                        "${mConfig!!.deviceMemoryThreshold * 100}%")
+                        "${monitorConfig!!.deviceMemoryThreshold * 100}%")
             }
             info.rate < 0.10f ->{
                 Log.i(TAG, "oom meminfo.rate < 10.0%")

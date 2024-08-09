@@ -9,6 +9,7 @@
 #include <vector>
 
 
+#define LOG_ERROR(tag,fmt,...) __android_log_print(ANDROID_LOG_ERROR,tag,fmt,##__VA_ARGS__)
 #define LOG_DEBUG(tag,fmt,...) __android_log_print(ANDROID_LOG_ERROR,tag,fmt,##__VA_ARGS__)
 #define LOG_DEBUG(tag,fmt,...) __android_log_print(ANDROID_LOG_DEBUG,tag,fmt,##__VA_ARGS__)
 #define LOG_INFO(tag,fmt,...) __android_log_print(ANDROID_LOG_INFO,tag,fmt,##__VA_ARGS__)
@@ -28,17 +29,20 @@ Java_com_source_log_Logger_init(JNIEnv *env, jclass clazz, jstring filepath, jin
     if (!path) return -1;
     int fd = open(path,O_RDWR|O_CREAT|O_APPEND,S_IRUSR|S_IWUSR);
     if (fd==-1){
+        LOG_ERROR("loglib","openfile error:%s", strerror(errno));
 //        LOG_ERROR("loglib","openfile error:%s", strerror(errno));
         goto cleanup;
     }
 
     if (ftruncate(fd,buffer_size)==-1){
+        LOG_ERROR("loglib","ftruncate error:%s", strerror(errno));
 //        LOG_ERROR("loglib","ftruncate error:%s", strerror(errno));
         goto cleanup;
     }
 
     gMappedRegion = (char*)mmap(nullptr,buffer_size,PROT_WRITE,MAP_SHARED,fd,0);
     if (gMappedRegion==MAP_FAILED){
+        LOG_ERROR("loglib","gMappedRegion error:%s", strerror(errno));
 //        LOG_ERROR("loglib","gMappedRegion error:%s", strerror(errno));
         goto cleanup;
     }

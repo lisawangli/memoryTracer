@@ -3,13 +3,14 @@ package com.source.hmileak.base
 import android.app.Application
 import android.os.Build
 import android.os.Handler
+import com.source.hmileak.MonitorConfig
 import com.source.hmileak.OOMHprofUploader
+import com.source.hmileak.OOMMonitor
 import com.source.hmileak.OOMReportUploader
 import com.source.hprofanalyzer.util.SizeUnit
 import java.io.File
 
-class Config private constructor(
-    val application: Application,
+class Config (
     val maxOverThresholdCount: Int,
     val fdThreshold: Int,
     val forceDumpJavaHeapMaxThreshold: Float,
@@ -19,13 +20,12 @@ class Config private constructor(
     val loopInterval: Long,
     val hprofUploader: OOMHprofUploader?,
     val reportUploader: OOMReportUploader?,
-    val rootFileInvoker: (String) -> File,
+
     internal val loopHandlerInvoker: () -> Handler
-) {
+): MonitorConfig<OOMMonitor>(){
 
 
-    class Builder {
-        private lateinit var mApplication: Application
+    class Builder: MonitorConfig.Builder<Config> {
         private var mThreadThreshold: Int? = null
 
         private var mFdThreshold = 1000
@@ -69,16 +69,12 @@ class Config private constructor(
 
         private var mLoopHandlerInvoker: (() -> Handler)? = null
 
-        fun setApplication(application: Application) = apply {
-            mApplication = application
-        }
 
         fun setLoopHandlerInvoker(loopHandlerInvoker: () -> Handler) = apply {
             this.mLoopHandlerInvoker = loopHandlerInvoker
         }
 
-        fun build(): Config = Config(
-            application = mApplication,
+        override fun build(): Config = Config(
             maxOverThresholdCount = 3,
             fdThreshold = mFdThreshold,
             forceDumpJavaHeapMaxThreshold = mForceDumpJavaHeapMaxThreshold,
@@ -88,13 +84,6 @@ class Config private constructor(
             loopInterval = mLoopInterval,
             hprofUploader = mHprofUploader,
             reportUploader = mReportUploader,
-            rootFileInvoker = mRootFileInvoker ?: {
-                val rootDir = runCatching { mApplication.getExternalFilesDir("") }.getOrNull()
-
-                File(rootDir ?: mApplication.filesDir, "performance/$it")
-                    .apply { mkdirs() }
-            },
-
             loopHandlerInvoker = mLoopHandlerInvoker ?: { LoopThread.LOOP_HANDLER }
 
         )

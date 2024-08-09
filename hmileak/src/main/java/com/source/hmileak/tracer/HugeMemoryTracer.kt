@@ -17,21 +17,17 @@ class HugeMemoryTracer: OOMTracker() {
 
     private var mDumpReason = ""
 
-    private var mConfig: Config? = null
-    override fun init(config: Config) {
-        this.mConfig = config
-    }
 
     override fun track(): Boolean {
         var javaHeap = SystemInfo.javaHeap
-        if (javaHeap.rate> mConfig?.forceDumpJavaHeapMaxThreshold!!) {
+        if (javaHeap.rate> monitorConfig?.forceDumpJavaHeapMaxThreshold!!) {
             mDumpReason = REASON_HIGH_WATERMARK
             Log.i("HugeMemoryTracer", "[meet condition] fast huge memory allocated detected, " +
                     "high memory watermark, force dump analysis!")
             return true
         }
         val lastJavaHeap =SystemInfo.lastJavaHeap
-        if (lastJavaHeap.max!= 0L &&javaHeap.used - lastJavaHeap.used> SizeUnit.KB.toByte(mConfig!!.forceDumpJavaHeapMaxThreshold)){
+        if (lastJavaHeap.max!= 0L &&javaHeap.used - lastJavaHeap.used> SizeUnit.KB.toByte(monitorConfig!!.forceDumpJavaHeapMaxThreshold)){
             mDumpReason = REASON_HUGE_DELTA
             Log.i("HugeMemoryTracer",  "[meet condition] fast huge memory allocated detected, " +
                     "over the delta threshold!")
