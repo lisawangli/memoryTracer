@@ -3,6 +3,7 @@ package com.source.memorytracer;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -28,12 +29,12 @@ public class JavaLeakTestActivity extends AppCompatActivity {
 
     public void onClick(View v){
         if (v.getId() == R.id.btn_make_java_leak) {
+            showJavaLeakHint();
             OOMMonitorInitTask.INSTANCE.init(JavaLeakTestActivity.this.getApplication());
             OOMMonitor.INSTANCE.startLoop(true,false,5000L);
             LeakMaker.makeLeak(this);
         } else if (v.getId() == R.id.btn_hprof_dump) {
             showHprofDumpHint();
-
             //Pull the hprof from the devices.
             //adb shell "run-as com.kwai.koom.demo cat 'files/test.hprof'" > ~/temp/test.hprof
             ForkStripHeapDumper.getInstance().dump(

@@ -23,6 +23,9 @@
 
 package com.bytedance.android.bytehook;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ByteHook {
     private static final int ERRNO_OK = 0;
     private static final int ERRNO_UNINIT = 1;
@@ -308,6 +311,20 @@ public class ByteHook {
     }
 
     private static native String nativeGetVersion();
+
+    public static native Object[] check_leaks();
+    public static List<String> getLeakList() {
+        List<String> leaks = new ArrayList<>();
+        Object[] array = check_leaks();
+        if (array != null) {
+            for (Object obj : array) {
+                if (obj instanceof String) {
+                    leaks.add((String) obj);
+                }
+            }
+        }
+        return leaks;
+    }
     private static native int nativeInit(int mode, boolean debug);
     private static native int nativeAddIgnore(String callerPathName);
     private static native int nativeGetMode();

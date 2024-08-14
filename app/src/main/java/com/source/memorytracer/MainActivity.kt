@@ -37,25 +37,56 @@ class MainActivity : AppCompatActivity() {
         val bufferSize = 1024 * 1024 // 1MB
         var strP = Logger.init(logFilePath, bufferSize);
         var start = System.currentTimeMillis();
-        repeat(100000) { i ->
-            Logger.writeLog(strP, "Log entry #$i\n")
-        }
+//        repeat(100000) { i ->
+//            Logger.writeLog(strP, "Log entry #$i\n")
+//        }
         Logger.writeLog(strP,"Application started.\n");
         Log.e("MainActivity","time:"+(System.currentTimeMillis() - start));
         // Example of a call to a native method
 
 //        NativeHook.hook(1)
-            ByteHook.nativeHook(1)
+            ByteHook.nativeHook(0)
 
-        binding.sampleText.text = stringFromJNI()
         binding.sampleText.setOnClickListener(object : OnClickListener {
             override fun onClick(v: View?) {
-//               NativeHook.dumpRecords("")
+                binding.sampleText.text = stringFromJNI()
+
             }
 
         } )
+        binding.dump.setOnClickListener(object : OnClickListener{
+            override fun onClick(v: View?) {
+                Log.e("MainActivity","=======dump==========");
+//                val picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+//                val file = File(picturesDir, "bytehook_records.txt")
+//
+//                val pathname = file.absolutePath
+//
+//                ByteHook.nativeDumpRecords(pathname)
+                val records = ByteHook.getRecords()
+                if (records != null) {
+                    for (line in records.split("\n".toRegex()).dropLastWhile { it.isEmpty() }
+                        .toTypedArray()) {
+                        Log.i("MainActivity", line!!)
+                        Logger.writeLog(strP, line)
+                    }
+                }
+                var memory = ByteHook.getLeakList();
+                Log.i("MainActivity", "memory:"+memory)
 
-        ByteHook.nativeUnhook()
+                if (memory!=null){
+                    memory.forEach {
+                        Log.i("MainActivity", "memory:"+it!!)
+                        Logger.writeLog(strP, it)
+                    }
+
+                }
+
+            }
+
+        })
+
+//        ByteHook.nativeUnhook()
 
 //        var config:Config = Config.Builder().setApplication(application).build()
 //        OOMMonitor.init(config)

@@ -10,6 +10,9 @@ import android.util.Log
 import com.google.gson.Gson
 
 import com.source.hprofanalyzer.util.OOMFileManager
+import com.source.hprofanalyzer.util.OOMFileManager.createDumpFile
+import com.source.hprofanalyzer.util.OOMFileManager.fdDumpDir
+import com.source.hprofanalyzer.util.OOMFileManager.threadDumpDir
 import com.source.hprofanalyzer.util.SizeUnit
 import com.source.hprofanalyzer.util.SystemInfo.javaHeap
 import com.source.hprofanalyzer.util.SystemInfo.memInfo
@@ -98,6 +101,7 @@ class HeapAnalysisService : IntentService("HeapAnalysisService") {
 
         fun startAnalysisService(context: Context, hprofFile: String?, jsonFile: String?,
                                  extraData: AnalysisExtraData, resultCallBack: AnalysisReceiver.ResultCallback?) {
+            Log.i(TAG, "startAnalysisService")
 
             val analysisReceiver = AnalysisReceiver().apply {
                 if (resultCallBack != null) {
@@ -157,7 +161,7 @@ class HeapAnalysisService : IntentService("HeapAnalysisService") {
         val hprofFile = intent?.getStringExtra(Info.HPROF_FILE)
         val jsonFile = intent?.getStringExtra(Info.JSON_FILE)
         val rootPath = intent?.getStringExtra(Info.ROOT_PATH)
-
+        Log.e(TAG,"=========onHandleIntent===========")
         OOMFileManager.init(rootPath)
 
         kotlin.runCatching {
@@ -176,6 +180,15 @@ class HeapAnalysisService : IntentService("HeapAnalysisService") {
             resultReceiver?.send(AnalysisReceiver.RESULT_CODE_FAIL,null)
             return
         }
+
+        kotlin.runCatching {
+            findPathsToGcRoot()
+        }.onFailure {
+            it.printStackTrace()
+            Log.i(OOM_ANALYSIS_EXCEPTION_TAG, "find gc path exception " + it.message)
+            resultReceiver?.send(AnalysisReceiver.RESULT_CODE_FAIL, null)
+            return
+        }
         fillJsonFile(jsonFile)
         resultReceiver?.send(AnalysisReceiver.RESULT_CODE_OK,null)
         System.exit(0)
@@ -185,7 +198,7 @@ class HeapAnalysisService : IntentService("HeapAnalysisService") {
     private fun buildIndex(hprofFile: String?) {
         if (hprofFile.isNullOrEmpty()) return
 
-
+        Log.i(TAG, "start analyze")
         SharkLog.logger = object : SharkLog.Logger {
             override fun d(message: String) {
                 println(message)
@@ -202,14 +215,14 @@ class HeapAnalysisService : IntentService("HeapAnalysisService") {
 
         measureTimeMillis {
             mHeapGraph = File(hprofFile).openHeapGraph(null,
-                setOf(
-                    HprofRecordTag.ROOT_JNI_GLOBAL,
+                setOf(HprofRecordTag.ROOT_JNI_GLOBAL,
                     HprofRecordTag.ROOT_JNI_LOCAL,
                     HprofRecordTag.ROOT_NATIVE_STACK,
                     HprofRecordTag.ROOT_STICKY_CLASS,
                     HprofRecordTag.ROOT_THREAD_BLOCK,
                     HprofRecordTag.ROOT_THREAD_OBJECT));
         }.also {
+           Log.i(TAG, "build index cost time: $it")
         }
     }
 
@@ -237,7 +250,14 @@ class HeapAnalysisService : IntentService("HeapAnalysisService") {
 
             dumpReason = intent?.getStringExtra(Info.REASON)
 
+            Log.i(TAG, "handle Intent, fdCount:${fdCount} pss:${pss} rss:${rss} vss:${vss} " +
+                    "threadCount:${threadCount}")
 
+            fdList = createDumpFile(fdDumpDir).takeIf { it.exists() }?.readLines()
+            threadList = createDumpFile(threadDumpDir).takeIf { it.exists() }?.readLines()
+
+            createDumpFile(fdDumpDir).delete()
+            createDumpFile(threadDumpDir).delete()
         }
     }
 

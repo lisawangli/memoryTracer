@@ -41,22 +41,22 @@ Java_com_source_memorytracer_MainActivity_stringFromJNI(
     *threadId = 1; // 设置线程ID
 
     // 创建新线程，传入线程函数和参数
-    if (pthread_create(&thread, NULL, threadFunction, (void*)threadId) != 0) {
-        LOG_ERROR("stderr", "Failed to create thread\n");
-        exit(EXIT_FAILURE);
-    }
-
-    // 等待新线程结束
-    if (pthread_join(thread, NULL) != 0) {
-        LOG_ERROR("stderr", "Failed to join thread\n");
-        exit(EXIT_FAILURE);
-    }
-
-    LOG_ERROR("test","Hello, World! from main thread");
-//    int *array = (int *)malloc(5 * sizeof(int)); // 初始分配5个整数
-//    if (array == NULL) {
-//        fprintf(stderr, "Memory allocation failed\n");
+//    if (pthread_create(&thread, NULL, threadFunction, (void*)threadId) != 0) {
+//        LOG_ERROR("stderr", "Failed to create thread\n");
+//        exit(EXIT_FAILURE);
 //    }
+//
+//    // 等待新线程结束
+//    if (pthread_join(thread, NULL) != 0) {
+//        LOG_ERROR("stderr", "Failed to join thread\n");
+//        exit(EXIT_FAILURE);
+//    }
+
+//    LOG_ERROR("test","Hello, World! from main thread");
+    int *array = (int *)malloc(5 * sizeof(int)); // 初始分配5个整数
+    if (array == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+    }
 //
 //    // 使用分配的内存
 //    for (int i = 0; i < 5; ++i) {

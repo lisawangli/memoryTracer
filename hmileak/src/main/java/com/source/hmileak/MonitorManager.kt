@@ -22,6 +22,7 @@ object MonitorManager {
         this.commonConfig = config
     }
 
+
     @JvmStatic
     fun <M : MonitorConfig<*>> addMonitorConfig(_config:M) = apply {
         var supperType: Type? = _config.javaClass.genericSuperclass
@@ -35,18 +36,11 @@ object MonitorManager {
 
         val monitorType = supperType.actualTypeArguments[0] as Class<Monitor<M>>
 
-        Log.e("MonitorManager","supperType:"+supperType)
         if (MONITOR_MAP.containsKey(monitorType)) {
             return@apply
         }
 
-        Log.e("MonitorManager","monitorType:"+monitorType)
-
-
         Log.e("MonitorManager","instance11:"+monitorType.getDeclaredField("INSTANCE").get(null))
-
-//        var monitor =  monitorType.getDeclaredField("INSTANCE").get(null) as Monitor<M>
-//        Log.e("MonitorManager","monitor:"+monitor)
 
         var monitor = try {
             monitorType.getDeclaredField("INSTANCE").get(null) as Monitor<M>
@@ -65,6 +59,7 @@ object MonitorManager {
     @JvmStatic
     fun onApplicationCreate(){
         registerApplicationExtension()
+
         registerMonitorEventObserver()
     }
     private fun registerMonitorEventObserver() {

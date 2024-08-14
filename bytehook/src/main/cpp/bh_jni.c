@@ -93,6 +93,16 @@ OPEN_DEF(pthread_exit)
 pthread_t *created_threads[100];
 int created_threads_count = 0;
 
+typedef struct MemBlock{
+    void *ptr;
+    size_t size;
+    struct MemBlock *next;
+}MemBlock;
+
+MemBlock *head = NULL;
+pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+
+
 // Proxy functions
 static int pthread_create_proxy(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg) {
     int result = BYTEHOOK_CALL_PREV(pthread_create_proxy, pthread_create_t, thread, attr, start_routine, arg);
@@ -105,10 +115,12 @@ static int pthread_create_proxy(pthread_t *thread, const pthread_attr_t *attr, v
             LOG("pthread_create_proxy called with thread: %p\n", *thread);
         }
     }
+    BYTEHOOK_POP_STACK();
     return result;
 }
 
 static void pthread_exit_proxy(void *retval) {
+    BYTEHOOK_CALL_PREV(pthread_exit_proxy, pthread_exit_t, retval);
     // Before exiting, check if there are any unjoined threads
     for (int i = 0; i < created_threads_count; i++) {
         pthread_t tid = (pthread_t) created_threads[i];
@@ -123,15 +135,27 @@ static void pthread_exit_proxy(void *retval) {
             LOG("WARNING: Thread %p exited without being joined or detached.\n", tid);
         }
     }
+    BYTEHOOK_POP_STACK();
 
     // Call the original function
-    BYTEHOOK_CALL_PREV(pthread_exit_proxy, pthread_exit_t, retval);
 }
 
 
 static void *memalign_proxy(size_t ptr,size_t size){
     void *new_ptr = BYTEHOOK_CALL_PREV(memalign_proxy,memalign_t ,ptr,size);
+    if (new_ptr) {
+        pthread_mutex_lock(&lock);
+        MemBlock * block = (MemBlock*)malloc(sizeof(MemBlock));
+        block->ptr = new_ptr;
+        block->size = size;
+
+        block->next = head;
+        head = block;
+        pthread_mutex_unlock(&lock);
+        LOG("Allocated %zu bytes at %p ", size, new_ptr);
+    }
     LOG("memalign_proxy called with alignment: %zu, size: %zu, returning address: %p\n", ptr, size, new_ptr);
+    BYTEHOOK_POP_STACK();
     return new_ptr;
 
 }
@@ -139,41 +163,105 @@ static void *memalign_proxy(size_t ptr,size_t size){
 static int posix_memalign_proxy(void **memptr,size_t alignment,size_t size) {
     int result = BYTEHOOK_CALL_PREV(posix_memalign_proxy,posix_memalign_t,memptr,alignment,size);
     if (result==0){
+        if (memptr) {
+            pthread_mutex_lock(&lock);
+            MemBlock * block = (MemBlock*)malloc(sizeof(MemBlock));
+            block->ptr = memptr;
+            block->size = size;
+
+            block->next = head;
+            head = block;
+            pthread_mutex_unlock(&lock);
+            LOG("Allocated %zu bytes at %p ", size, memptr);
+        }
         LOG("posix_memalign_proxy called with alignment: %zu, size: %zu, returning pointer: %p\n", alignment, size, *memptr);
     }
+    BYTEHOOK_POP_STACK();
+
     return result;
 }
 
 static void *realloc_proxy(void *ptr,size_t size){
     void *new_ptr = BYTEHOOK_CALL_PREV(realloc_proxy,realloc_t,ptr,size);
+    if (new_ptr) {
+        pthread_mutex_lock(&lock);
+        MemBlock * block = (MemBlock*)malloc(sizeof(MemBlock));
+        block->ptr = new_ptr;
+        block->size = size;
+
+        block->next = head;
+        head = block;
+        pthread_mutex_unlock(&lock);
+        LOG("Allocated %zu bytes at %p ", size, new_ptr);
+    }
     LOG("realloc_proxy called with ptr: %p, size: %zu, returning address: %p\n", ptr, size, new_ptr);
+    BYTEHOOK_POP_STACK();
+
     return new_ptr;
 }
 
 static void *calloc_proxy(size_t ptr,size_t size){
     void *new_ptr = BYTEHOOK_CALL_PREV(realloc_proxy,calloc_t ,ptr,size);
+    if (new_ptr) {
+        pthread_mutex_lock(&lock);
+        MemBlock * block = (MemBlock*)malloc(sizeof(MemBlock));
+        block->ptr = new_ptr;
+        block->size = size;
+
+        block->next = head;
+        head = block;
+        pthread_mutex_unlock(&lock);
+        LOG("Allocated %zu bytes at %p ", size, new_ptr);
+    }
     LOG("calloc_proxy called with nmemb: %zu, size: %zu, returning address: %p\n", ptr, size, ptr);
+    BYTEHOOK_POP_STACK();
+
     return new_ptr;
 }
 
 
 static void *malloc_proxy(size_t size) {
     void *ptr = BYTEHOOK_CALL_PREV(malloc_proxy, malloc_t, size);
+    if (ptr) {
+        pthread_mutex_lock(&lock);
+        MemBlock * block = (MemBlock*)malloc(sizeof(MemBlock));
+        block->ptr = ptr;
+        block->size = size;
+
+        block->next = head;
+        head = block;
+        pthread_mutex_unlock(&lock);
+        LOG("Allocated %zu bytes at %p ", size, ptr);
+    }
     LOG("malloc_proxy called with size: %zu, returning address: %p\n", size, ptr);
+    BYTEHOOK_POP_STACK();
+
     return ptr;
 }
 
 static void free_proxy(void *ptr) {
     BYTEHOOK_CALL_PREV(free_proxy,free_t,ptr);
+    pthread_mutex_lock(&lock);
+    MemBlock ** current = &head;
+    while (*current) {
+        if ((*current)->ptr == ptr) {
+            MemBlock* toDelete = *current;
+            *current = (*current)->next;
+            free(toDelete);
+            pthread_mutex_unlock(&lock);
+            return;
+        }
+        current = &(*current)->next;
+    }
+    pthread_mutex_unlock(&lock);
     LOG("free_proxy called with address: %p\n", ptr);
+    BYTEHOOK_POP_STACK();
 
 }
 
 static int hacker_hook(JNIEnv *env, jobject thiz, jint type) {
     (void)env, (void)thiz;
-    if (type==1){
 
-    }
     pthread_create_stub = bytehook_hook_single("libmemorytracer.so", NULL, "pthread_create", (void *)pthread_create_proxy,
                                                pthread_create_hooked_callback, NULL);
     pthread_exit_stub = bytehook_hook_single("libmemorytracer.so", NULL, "pthread_exit", (void *)pthread_exit_proxy,
@@ -213,14 +301,66 @@ static int hacker_unhook(JNIEnv *env, jobject thiz) {
     return 0;
 }
 
+static jobjectArray check_leaks(JNIEnv *env, jobject thiz){
+    pthread_mutex_lock(&lock);
+    MemBlock *current = head;
+    const char *format = "Memory leak detected: %zu bytes at %p\n";
+    jobjectArray leakArray = NULL;
+    jclass stringClass = (*env)->FindClass(env, "java/lang/String");
+    jint count = 0;
+
+    // 计算内存块数量
+    while (current) {
+        count++;
+        current = current->next;
+    }
+    current = head; // 重置指针
+
+    // 预先创建字符串数组
+    leakArray = (*env)->NewObjectArray(env, count, stringClass, NULL);
+    if (leakArray == NULL) {
+        pthread_mutex_unlock(&lock);
+        return NULL; // 创建对象数组失败
+    }
+
+    // 初始化一个缓冲区用于格式化
+    char leakInfo[128]; // 假设每条日志信息不超过128字节
+    count = 0; // 重置计数器
+
+    while (current) {
+        // 格式化日志信息
+        snprintf(leakInfo, sizeof(leakInfo), format, current->size, current->ptr);
+
+        // 创建 jstring 并添加到数组中
+        jstring leakInfoStr = (*env)->NewStringUTF(env, leakInfo);
+        if (leakInfoStr == NULL) {
+            pthread_mutex_unlock(&lock);
+            return NULL; // jstring 创建失败
+        }
+
+        // 将 jstring 添加到数组中
+        (*env)->SetObjectArrayElement(env, leakArray, count, leakInfoStr);
+        (*env)->DeleteLocalRef(env, leakInfoStr);
+        count++;
+
+        current = current->next;
+    }
+
+    pthread_mutex_unlock(&lock);
+    return leakArray;
+}
 static void hacker_dump_records(JNIEnv *env, jobject thiz, jstring pathname) {
     (void)thiz;
+    LOG("c_pathname=========hacker_dump_records");
 
     const char *c_pathname = (*env)->GetStringUTFChars(env, pathname, 0);
-    if (NULL == c_pathname) return;
+    LOG("c_pathname=========hacker_dump_records============%s",c_pathname);
 
+    if (NULL == c_pathname) return;
     int fd = open(c_pathname, O_CREAT | O_WRONLY | O_CLOEXEC | O_TRUNC | O_APPEND, S_IRUSR | S_IWUSR);
+    LOG("fd=========hacker_dump_records============%d",fd);
     if (fd >= 0) {
+        LOG("fd=====================");
         bytehook_dump_records(fd, BYTEHOOK_RECORD_ITEM_ALL);
         close(fd);
     }
@@ -352,7 +492,8 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
                          {"nativeHook", "(I)I", (void *)hacker_hook},
                          {"nativeUnhook", "()I", (void *)hacker_unhook},
                          {"nativeDumpRecords", "(Ljava/lang/String;)V", (void *)hacker_dump_records},
-                         {"memoryHook", "()V", (void *)bh_jni_memoryhook}
+                         {"memoryHook", "()V", (void *)bh_jni_memoryhook},
+                            {"check_leaks", "()[Ljava/lang/Object;", (void *) check_leaks},
 
   };
   if (__predict_false(0 != (*env)->RegisterNatives(env, cls, m, sizeof(m) / sizeof(m[0])))) return JNI_ERR;
@@ -360,3 +501,8 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
   return BH_JNI_VERSION;
 }
 
+
+//JNIEXPORT jobjectArray JNICALL
+//Java_com_bytedance_android_bytehook_ByteHook_check_1leaks(JNIEnv *env, jclass clazz) {
+//    // TODO: implement check_leaks()
+//}

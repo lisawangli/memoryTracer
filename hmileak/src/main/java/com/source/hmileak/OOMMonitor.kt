@@ -1,5 +1,6 @@
 package com.source.hmileak
 
+import android.nfc.Tag
 import android.os.SystemClock
 import android.util.Log
 import androidx.lifecycle.Lifecycle
@@ -8,9 +9,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.source.hmileak.MonitorManager.getApplication
 import com.source.hmileak.base.Config
 import com.source.hmileak.base.LooperMonitor
-import com.source.hmileak.base.currentActivity
-import com.source.hmileak.base.isForeground
-import com.source.hmileak.base.registerProcessLifecycleObserver
+
 import com.source.hmileak.tracer.FdOomTracer
 import com.source.hmileak.tracer.HeapOOMTracker
 import com.source.hmileak.tracer.HugeMemoryTracer
@@ -64,11 +63,12 @@ public object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
     }
 
     override fun startLoop(cleanData: Boolean, postAtFront: Boolean, delayMillis: Long) {
-        if (!isMainProcess(commonConfig)){
+        if (!isMainProcess()){
             return
         }
         if (mIsLoopStarted)
             return
+        Log.e("OOMonitor","isForground:"+ getApplication().isForeground)
         mIsLoopStarted = true
         super.startLoop(cleanData, postAtFront, delayMillis)
         getLoopHandler().postDelayed({ async { processOldHprofFile() } }, delayMillis)
@@ -77,7 +77,7 @@ public object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
 
 
     override fun stopLoop() {
-        if (!isMainProcess(commonConfig)){
+        if (!isMainProcess()){
             return
         }
 
@@ -86,6 +86,7 @@ public object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
     }
 
     private fun processOldHprofFile() {
+        Log.i("OOMMonitor", "processHprofFile");
         if (mHasProcessOldHprof) {
             return
         }
@@ -195,13 +196,20 @@ public object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
     }
 
     private fun startAnalysisService(hprofile:File,jsonFile:File,reason:String) {
+        Log.e("OOMMonitor","===hprofile===="+hprofile.length()+"======"+getApplication().isForeground)
         if (hprofile.length() == 0L) {
             hprofile.delete()
             return
         }
+
         if (!getApplication().isForeground) {
+            Log.e("OOMMonitor", "try startAnalysisService, but not foreground")
             mForegroundPendingRunnables.add(Runnable {
-                startAnalysisService(hprofile,jsonFile,reason)
+                startAnalysisService(
+                    hprofile,
+                    jsonFile,
+                    reason
+                )
             })
             return
         }
@@ -210,6 +218,7 @@ public object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
             this.currentPage = getApplication().currentActivity?.localClassName.orEmpty()
             this.usageSeconds ="${(SystemClock.elapsedRealtime() - mMonitorInitTime)/1000}"
         }
+        Log.e("OOMonitor","======startAnalysisService========")
         HeapAnalysisService.startAnalysisService(getApplication(),
             hprofile.canonicalPath,
             jsonFile.canonicalPath,
