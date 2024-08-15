@@ -1,4 +1,4 @@
-//
+
 // Created by ts on 2024/6/27.
 //
 
@@ -14,10 +14,10 @@
 #include <./../lzma/XzCrc64.h>
 
 
-    static const char *kDynstrName = ".dynstr";
-    static const char *kStrtabName = ".strtab";
-    static const char *kGnuHash = ".gnu.hash";
-    static const char *kGnuDebugdata = ".gnu_debugdata";
+static const char *kDynstrName = ".dynstr";
+static const char *kStrtabName = ".strtab";
+static const char *kGnuHash = ".gnu.hash";
+static const char *kGnuDebugdata = ".gnu_debugdata";
     ElfReader::ElfReader(std::shared_ptr<ElfWrapper> elf_wrapper) :elf_wrapper_(),
     shdr_table_(nullptr),dynsym_(nullptr),
     dynstr_(nullptr),symtab_(nullptr),
@@ -30,99 +30,114 @@
         elf_wrapper_ = elf_wrapper;
     }
 
-    bool ElfReader::isValidElf() {
-        return elf_wrapper_!= nullptr && !memcmp(elf_wrapper_->Start()->e_ident,ELFMAG,SELFMAG);
+bool ElfReader::IsValidElf() {
+    return elf_wrapper_ != nullptr &&
+           !memcmp(elf_wrapper_->Start()->e_ident, ELFMAG, SELFMAG);
+}
+
+bool ElfReader::Init() {
+    if (!IsValidElf() || !IsValidRange(elf_wrapper_->Start()->e_ehsize)) {
+        return false;
     }
 
-    bool ElfReader::Init() {
-        if (!isValidElf() || !IsValidRange(elf_wrapper_->Start()->e_ehsize)) {
-            return false;
-        }
 
-        shdr_table_ = CheckedOffset<ElfW(Shdr)>(
-                elf_wrapper_->Start()->e_shoff,
-                (elf_wrapper_->Start()->e_shnum) * (elf_wrapper_->Start()->e_shentsize));
-        if (!shdr_table_) {
-            return false;
-        }
+    shdr_table_ = CheckedOffset<ElfW(Shdr)>(
+            elf_wrapper_->Start()->e_shoff,
+            (elf_wrapper_->Start()->e_shnum) * (elf_wrapper_->Start()->e_shentsize));
+    if (!shdr_table_) {
+        return false;
+    }
 
-        const char *shstr = CheckedOffset<const char>(
-                shdr_table_[elf_wrapper_->Start()->e_shstrndx].sh_offset,
-                shdr_table_[elf_wrapper_->Start()->e_shstrndx].sh_size);
-        if (!shstr) {
-            return false;
-        }
+    const char *shstr = CheckedOffset<const char>(
+            shdr_table_[elf_wrapper_->Start()->e_shstrndx].sh_offset,
+            shdr_table_[elf_wrapper_->Start()->e_shstrndx].sh_size);
+    if (!shstr) {
+        return false;
+    }
 
-        for (int index = 0; index < elf_wrapper_->Start()->e_shnum; ++index) {
-            if (shdr_table_[index].sh_size <= 0) {
-                continue;
-            }
-            switch (shdr_table_[index].sh_type) {
-                case SHT_DYNSYM:
-                    dynsym_ = CheckedOffset<ElfW(Sym)>(shdr_table_[index].sh_offset,
-                                                       shdr_table_[index].sh_size);
-                    break;
-                case SHT_STRTAB: {
-                    const char *tmp_str = CheckedOffset<const char>(
-                            shdr_table_[index].sh_offset, shdr_table_[index].sh_size);
-                    if (!strcmp(shstr + shdr_table_[index].sh_name, kDynstrName)) {
-                        dynstr_ = tmp_str;
-                    } else if (!strcmp(shstr + shdr_table_[index].sh_name, kStrtabName)) {
-                        strtab_ = tmp_str;
-                    }
-                    break;
+    for (int index = 0; index < elf_wrapper_->Start()->e_shnum; ++index) {
+        if (shdr_table_[index].sh_size <= 0) {
+            continue;
+        }
+        switch (shdr_table_[index].sh_type) {
+            case SHT_DYNSYM:
+                dynsym_ = CheckedOffset<ElfW(Sym)>(shdr_table_[index].sh_offset,
+                                                   shdr_table_[index].sh_size);
+                break;
+            case SHT_STRTAB: {
+                const char *tmp_str = CheckedOffset<const char>(
+                        shdr_table_[index].sh_offset, shdr_table_[index].sh_size);
+                if (!strcmp(shstr + shdr_table_[index].sh_name, kDynstrName)) {
+                    dynstr_ = tmp_str;
+                } else if (!strcmp(shstr + shdr_table_[index].sh_name, kStrtabName)) {
+                    strtab_ = tmp_str;
                 }
-                case SHT_SYMTAB:
-                    symtab_ = CheckedOffset<ElfW(Sym)>(shdr_table_[index].sh_offset,
-                                                       shdr_table_[index].sh_size);
-                    symtab_ent_count_ =
-                            shdr_table_[index].sh_size / shdr_table_[index].sh_entsize;
-                    break;
-                case SHT_HASH:
-                    BuildHash(CheckedOffset<ElfW(Word)>(shdr_table_[index].sh_offset,
-                                                        shdr_table_[index].sh_size));
-                    break;
-                case SHT_PROGBITS:
-                    if (!strcmp(shstr + shdr_table_[index].sh_name, kGnuDebugdata)) {
-                        gnu_debugdata_ = CheckedOffset<const char>(
-                                shdr_table_[index].sh_offset, shdr_table_[index].sh_size);
-                        gnu_debugdata_size_ = shdr_table_[index].sh_size;
-                    }
-                    break;
-                default:
-                    if (!strcmp(shstr + shdr_table_[index].sh_name, kGnuHash)) {
-                        BuildGnuHash(CheckedOffset<ElfW(Word)>(shdr_table_[index].sh_offset,
-                                                               shdr_table_[index].sh_size));
-                    }
-                    break;
+                break;
             }
+            case SHT_SYMTAB:
+                symtab_ = CheckedOffset<ElfW(Sym)>(shdr_table_[index].sh_offset,
+                                                   shdr_table_[index].sh_size);
+                symtab_ent_count_ =
+                        shdr_table_[index].sh_size / shdr_table_[index].sh_entsize;
+                break;
+            case SHT_HASH:
+                BuildHash(CheckedOffset<ElfW(Word)>(shdr_table_[index].sh_offset,
+                                                    shdr_table_[index].sh_size));
+                break;
+            case SHT_PROGBITS:
+                if (!strcmp(shstr + shdr_table_[index].sh_name, kGnuDebugdata)) {
+                    gnu_debugdata_ = CheckedOffset<const char>(
+                            shdr_table_[index].sh_offset, shdr_table_[index].sh_size);
+                    gnu_debugdata_size_ = shdr_table_[index].sh_size;
+                }
+                break;
+            default:
+                if (!strcmp(shstr + shdr_table_[index].sh_name, kGnuHash)) {
+                    BuildGnuHash(CheckedOffset<ElfW(Word)>(shdr_table_[index].sh_offset,
+                                                           shdr_table_[index].sh_size));
+                }
+                break;
         }
-        return true;
+    }
+    return true;
     }
 
-    void *ElfReader::lookupSymbol(const char *symbol, Elf32_Addr load_base, bool only_dynsym) {
-        if (!symbol)
+    void *ElfReader::LookupSymbol(const char *symbol, ElfW(Addr) load_base, bool only_dynsym ){
+//    void *ElfReader::LookupSymbol(const char *symbol, Elf32_Addr load_base, bool only_dynsym) {
+        if (!symbol) {
             return nullptr;
-        ElfW(Addr) sym_vaddr = has_gnu_hash_? LookupByGnuHash(symbol): LookupByElfHash(symbol);
-        if (sym_vaddr!=0){
-            return reinterpret_cast<void *>(load_base+sym_vaddr);
         }
-        if (only_dynsym)
+
+        // First lookup from dynsym using hash
+        ElfW(Addr) sym_vaddr =
+                has_gnu_hash_ ? LookupByGnuHash(symbol) : LookupByElfHash(symbol);
+        if (sym_vaddr != 0) {
+            return reinterpret_cast<void *>(load_base + sym_vaddr);
+        }
+
+        if (only_dynsym) {
             return nullptr;
-        for (int index = 0; index < symtab_ent_count_; ++index) {
-            if (ELF_ST_TYPE(symtab_[index].st_info)!=STT_FUNC &&
-                    ELF_ST_TYPE(symtab_[index].st_info)!=STT_OBJECT){
+        }
+
+        // Try lookup from symtab
+        for (int index = 0; index < symtab_ent_count_; index++) {
+            // Only care functions and objects
+            if (ELF_ST_TYPE(symtab_[index].st_info) != STT_FUNC &&
+                ELF_ST_TYPE(symtab_[index].st_info) != STT_OBJECT) {
                 continue;
             }
-            if (!strcmp(strtab_+symtab_[index].st_name,symbol)){
-                return reinterpret_cast<void *>(load_base+symtab_[index].st_value);
+
+            if (!strcmp(strtab_ + symtab_[index].st_name, symbol)) {
+                return reinterpret_cast<void *>(load_base + symtab_[index].st_value);
             }
         }
-        std::string  decompressed_data;
+
+        // Try lookup from compressed gnu_debugdata
+        std::string decompressed_data;
         if (DecGnuDebugdata(decompressed_data)) {
-            ElfReader elfReader(std::make_shared<MemoryElfWrapper>(decompressed_data));
-            if (elfReader.Init()){
-                return elfReader.lookupSymbol(symbol,load_base);
+            ElfReader elf_reader(std::make_shared<MemoryElfWrapper>(decompressed_data));
+            if (elf_reader.Init()) {
+                return elf_reader.LookupSymbol(symbol, load_base);
             }
         }
         return nullptr;

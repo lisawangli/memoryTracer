@@ -96,7 +96,7 @@
             return nullptr;
         }
 
-        return elf_reader.lookupSymbol(name, data->info_.dlpi_addr, is_android_N());
+        return elf_reader.LookupSymbol(name, data->info_.dlpi_addr, is_android_N());
     }
 
     int DlFcn::dlclose(void *handle) {
@@ -133,7 +133,7 @@
         if (!elfReader.Init()){
             return nullptr;
         }
-        return elfReader.lookupSymbol(name,so_dl_info->load_base);
+        return elfReader.LookupSymbol(name,so_dl_info->load_base);
     }
 
     int DlFcn::dlclose_elf(void *handle) {

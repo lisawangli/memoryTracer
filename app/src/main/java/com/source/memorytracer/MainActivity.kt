@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         // Example of a call to a native method
 
 //        NativeHook.hook(1)
-            ByteHook.nativeHook(0)
+            ByteHook.nativeHook(0,"libmemorytracer.so")
 
         binding.sampleText.setOnClickListener(object : OnClickListener {
             override fun onClick(v: View?) {

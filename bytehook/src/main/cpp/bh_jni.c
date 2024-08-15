@@ -259,23 +259,26 @@ static void free_proxy(void *ptr) {
 
 }
 
-static int hacker_hook(JNIEnv *env, jobject thiz, jint type) {
+static int hacker_hook(JNIEnv *env, jobject thiz, jint type,jstring soname) {
     (void)env, (void)thiz;
+    const char *cString = (*env)->GetStringUTFChars(env, soname, NULL);
 
-    pthread_create_stub = bytehook_hook_single("libmemorytracer.so", NULL, "pthread_create", (void *)pthread_create_proxy,
+    LOG("soName:%s",cString);
+    pthread_create_stub = bytehook_hook_single(cString, NULL, "pthread_create", (void *)pthread_create_proxy,
                                                pthread_create_hooked_callback, NULL);
-    pthread_exit_stub = bytehook_hook_single("libmemorytracer.so", NULL, "pthread_exit", (void *)pthread_exit_proxy,
+    pthread_exit_stub = bytehook_hook_single(cString, NULL, "pthread_exit", (void *)pthread_exit_proxy,
                                              pthread_exit_hooked_callback, NULL);
 
-    malloc_stub = bytehook_hook_single("libmemorytracer.so",NULL,"malloc", (void *)malloc_proxy,
+    malloc_stub = bytehook_hook_single(cString,NULL,"malloc", (void *)malloc_proxy,
                                        malloc_hooked_callback,NULL);
-    free_stub = bytehook_hook_single("libmemorytracer.so", NULL, "free", (void *)free_proxy, free_hooked_callback, NULL);
+    free_stub = bytehook_hook_single(cString, NULL, "free", (void *)free_proxy, free_hooked_callback, NULL);
 
-    calloc_stub = bytehook_hook_single("libmemorytracer.so",NULL, "calloc",(void *) calloc_proxy,
+    calloc_stub = bytehook_hook_single(cString,NULL, "calloc",(void *) calloc_proxy,
                                        calloc_hooked_callback,NULL);
-    realloc_stub = bytehook_hook_single("libmemorytracer.so",NULL,"realloc",(void *) realloc_proxy,realloc_hooked_callback,NULL);
-    memalign_stub = bytehook_hook_single("libmemorytracer.so",NULL,"memalign",(void *) memalign_proxy,memalign_hooked_callback,NULL);
-    posix_memalign_stub = bytehook_hook_single("libmemorytracer.so",NULL,"posix_memalign",(void *) posix_memalign_proxy,posix_memalign_hooked_callback,NULL);
+    realloc_stub = bytehook_hook_single(cString,NULL,"realloc",(void *) realloc_proxy,realloc_hooked_callback,NULL);
+    memalign_stub = bytehook_hook_single(cString,NULL,"memalign",(void *) memalign_proxy,memalign_hooked_callback,NULL);
+    posix_memalign_stub = bytehook_hook_single(cString,NULL,"posix_memalign",(void *) posix_memalign_proxy,posix_memalign_hooked_callback,NULL);
+    (*env)->ReleaseStringUTFChars(env, soname, cString);
     return 0;
 }
 
@@ -351,14 +354,11 @@ static jobjectArray check_leaks(JNIEnv *env, jobject thiz){
 }
 static void hacker_dump_records(JNIEnv *env, jobject thiz, jstring pathname) {
     (void)thiz;
-    LOG("c_pathname=========hacker_dump_records");
 
     const char *c_pathname = (*env)->GetStringUTFChars(env, pathname, 0);
-    LOG("c_pathname=========hacker_dump_records============%s",c_pathname);
 
     if (NULL == c_pathname) return;
     int fd = open(c_pathname, O_CREAT | O_WRONLY | O_CLOEXEC | O_TRUNC | O_APPEND, S_IRUSR | S_IWUSR);
-    LOG("fd=========hacker_dump_records============%d",fd);
     if (fd >= 0) {
         LOG("fd=====================");
         bytehook_dump_records(fd, BYTEHOOK_RECORD_ITEM_ALL);
@@ -489,7 +489,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
                          {"nativeSetRecordable", "(Z)V", (void *)bh_jni_set_recordable},
                          {"nativeGetRecords", "(I)Ljava/lang/String;", (void *)bh_jni_get_records},
                          {"nativeGetArch", "()Ljava/lang/String;", (void *)bh_jni_get_arch},
-                         {"nativeHook", "(I)I", (void *)hacker_hook},
+                         {"nativeHook", "(ILjava/lang/String;)I", (void *)hacker_hook},
                          {"nativeUnhook", "()I", (void *)hacker_unhook},
                          {"nativeDumpRecords", "(Ljava/lang/String;)V", (void *)hacker_dump_records},
                          {"memoryHook", "()V", (void *)bh_jni_memoryhook},
@@ -500,9 +500,3 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 
   return BH_JNI_VERSION;
 }
-
-
-//JNIEXPORT jobjectArray JNICALL
-//Java_com_bytedance_android_bytehook_ByteHook_check_1leaks(JNIEnv *env, jclass clazz) {
-//    // TODO: implement check_leaks()
-//}

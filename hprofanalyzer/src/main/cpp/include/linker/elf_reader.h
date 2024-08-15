@@ -47,8 +47,8 @@
             }
         };
 
-        explicit ElfReader(std::shared_ptr<ElfWrapper> elfWrapper);
-        bool isValidElf();
+        explicit ElfReader(std::shared_ptr<ElfWrapper> elf_wrapper);
+        bool IsValidElf();
         bool Init();
 
         /**
@@ -58,8 +58,8 @@
           * 2. Try read symtab(symtab NOT in loaded segments) from ELF, then linear lookup symbol
           * 3. Try read gnu_debugdata(lZMA compressed ELF) from ELF, then linear lookup symtab
           */
-          void *lookupSymbol(const char *symbol, ElfW(Addr)load_base,bool only_dynsym = false);
-          ~ElfReader()=default;
+        void *LookupSymbol(const char *symbol, ElfW(Addr) load_base, bool only_dynsym = false);
+        ~ElfReader() = default;
     private:
         template<class T>T *CheckedOffset(off_t offset, size_t size);
         bool IsValidRange(off_t offset);

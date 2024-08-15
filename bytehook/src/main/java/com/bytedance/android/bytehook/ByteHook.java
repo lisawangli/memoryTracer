@@ -338,7 +338,7 @@ public class ByteHook {
     private static native void memoryHook();
 
 
-    public static native int nativeHook(int type);
+    public static native int nativeHook(int type,String soname);
     public static native int nativeUnhook();
     public static native void nativeDumpRecords(String pathname);
 }

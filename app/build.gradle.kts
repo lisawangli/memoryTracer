@@ -47,8 +47,13 @@ android {
 
 
 dependencies {
-    implementation(project(mapOf("path" to ":bytehook")))
-    implementation(project(mapOf("path" to ":hprofanalyzer")))
+//    implementation(project(mapOf("path" to ":bytehook")))
+    implementation(files("libs/bytehook-debug.aar"))
+    implementation(files("libs/log-debug.aar"))
+    implementation(files("libs/hprofanalyzer-debug.aar"))
+    implementation(files("libs/hmileak-debug.aar"))
+
+//    implementation(project(mapOf("path" to ":hprofanalyzer")))
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -58,9 +63,13 @@ dependencies {
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    implementation(project(mapOf("path" to ":hmileak")))
+//    implementation(project(mapOf("path" to ":hmileak")))
 //    implementation(project(mapOf("path" to ":hprofanalyzer")))
-    implementation(project(mapOf("path" to ":log")))
+//    implementation(project(mapOf("path" to ":log")))
+    //添加这几个库
+    implementation("androidx.lifecycle:lifecycle-process:2.8.2")
+    implementation("com.squareup.okio:okio:1.14.0")
+    implementation("com.google.code.gson:gson:2.8.2")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
