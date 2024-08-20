@@ -29,7 +29,7 @@ afterEvaluate{
                 from(components["release"])
                 groupId = "com.source.hprofanalyzer" // 请填入你的组件名
                 artifactId = "plugin" // 请填入你的工件名
-                version = "1.0" // 请填入工件的版本名
+                version = "1.0.1" // 请填入工件的版本名
             }
         }
     }

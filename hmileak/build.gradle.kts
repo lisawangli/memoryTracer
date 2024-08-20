@@ -26,7 +26,7 @@ afterEvaluate{
                 from(components["release"])
                 groupId = "com.source.hmileak" // 请填入你的组件名
                 artifactId = "plugin" // 请填入你的工件名
-                version = "1.0" // 请填入工件的版本名
+                version = "1.0.2" // 请填入工件的版本名
             }
         }
     }
@@ -75,7 +75,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
-    implementation("androidx.lifecycle:lifecycle-process:2.8.2")
+    implementation("androidx.lifecycle:lifecycle-process:2.3.1")
     implementation(project(mapOf("path" to ":hprofanalyzer")))
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

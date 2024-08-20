@@ -10,6 +10,9 @@ gradle加入：
         implementation("com.squareup.okio:okio:1.14.0")
         implementation("com.google.code.gson:gson:2.8.2")
 
+        implementation "com.source.hmileak:plugin:1.0.2"
+            implementation 'com.source.hprofanalyzer:plugin:1.0.1'
+
 
  在appliction中加入：
  DefaultInitTask.init(this)
