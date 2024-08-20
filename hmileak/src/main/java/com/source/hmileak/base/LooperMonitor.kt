@@ -2,6 +2,7 @@ package com.source.hmileak.base
 
 import android.app.Application
 import android.os.Handler
+import android.util.Log
 import com.source.hmileak.Monitor
 import com.source.hmileak.util.GlobalThreadPool
 import com.source.hmileak.util.async
@@ -18,22 +19,30 @@ abstract class LooperMonitor<T> : Monitor<T>(), Callable<LooperMonitor.State> {
 
     private val mLooperMonitor = object:Runnable{
         override fun run() {
+            Log.e("LoopMonitor","==========mLoopRunnable======="+call()+" mIsLoopStop:"+mIsLoopStop)
+
             if (call()==State.Terminate)
                 return
             if (mIsLoopStop)
                 return
+
             getLoopHandler().removeCallbacks(this)
             getLoopHandler().postDelayed(this, getLoopInterval())
         }
     }
 
     open fun startLoop(cleanData:Boolean = true,postAtFront:Boolean = true,delayMillis:Long = 0L){
+        Log.e("LoopMonitor","clearQueue:"+cleanData+"  postAtFront:"+postAtFront+" delayMillis:"+delayMillis)
+
         if (cleanData)
             getLoopHandler().removeCallbacks(mLooperMonitor);
-        if (postAtFront)
+        if (postAtFront) {
             getLoopHandler().postAtFrontOfQueue(mLooperMonitor)
-        else
-            getLoopHandler().postDelayed(mLooperMonitor,delayMillis)
+        }
+        else {
+            Log.e("LoopMonitor","==============postDelayed============")
+            getLoopHandler().postDelayed(mLooperMonitor, delayMillis)
+        }
         mIsLoopStop = false
     }
 

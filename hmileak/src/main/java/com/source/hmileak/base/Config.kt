@@ -14,6 +14,7 @@ class Config (
     val maxOverThresholdCount: Int,
     val fdThreshold: Int,
     val forceDumpJavaHeapMaxThreshold: Float,
+    val forceDumpJavaHeapDeltaThreshold: Int,
     val deviceMemoryThreshold: Float,
     val threadThreshold: Int,
     val heapThreshold: Float,
@@ -31,6 +32,7 @@ class Config (
         private var mFdThreshold = 1000
 
         private var mForceDumpJavaHeapMaxThreshold = 0.90f
+        private var mForceDumpJavaHeapDeltaThreshold = 350_000 //java heap rise 350m in a very short time.
         private var mDeviceMemoryThreshold: Float = 0.05f
         private var mHeapThreshold: Float? = null
         private var mRootFileInvoker: ((String) -> File)? = null
@@ -39,6 +41,10 @@ class Config (
         private var mReportUploader: OOMReportUploader? = null
         fun setThreadThreshold(threadThreshold: Int) = apply {
             mThreadThreshold = threadThreshold
+        }
+
+        fun setForceDumpJavaHeapDeltaThreshold(forceDumpJavaHeapDeltaThreshold: Int) = apply {
+            mForceDumpJavaHeapDeltaThreshold = forceDumpJavaHeapDeltaThreshold
         }
         fun setHprofUploader(hprofUploader: OOMHprofUploader) = apply {
             mHprofUploader = hprofUploader
@@ -78,6 +84,7 @@ class Config (
             maxOverThresholdCount = 3,
             fdThreshold = mFdThreshold,
             forceDumpJavaHeapMaxThreshold = mForceDumpJavaHeapMaxThreshold,
+            forceDumpJavaHeapDeltaThreshold = mForceDumpJavaHeapDeltaThreshold,
             deviceMemoryThreshold = mDeviceMemoryThreshold,
             threadThreshold = mThreadThreshold ?: DEFAULT_THREAD_THRESHOLD,
             heapThreshold = mHeapThreshold ?: DEFAULT_HEAP_THRESHOLD,

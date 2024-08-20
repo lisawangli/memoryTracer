@@ -30,8 +30,7 @@ public class JavaLeakTestActivity extends AppCompatActivity {
     public void onClick(View v){
         if (v.getId() == R.id.btn_make_java_leak) {
             showJavaLeakHint();
-            OOMMonitorInitTask.INSTANCE.init(JavaLeakTestActivity.this.getApplication());
-            OOMMonitor.INSTANCE.startLoop(true,false,5000L);
+
             LeakMaker.makeLeak(this);
         } else if (v.getId() == R.id.btn_hprof_dump) {
             showHprofDumpHint();

@@ -118,7 +118,7 @@ class HeapAnalysisService : IntentService("HeapAnalysisService") {
                 putExtra(Info.JAVA_MAX_MEM, SizeUnit.BYTE.toMB(javaHeap.max).toString())
                 putExtra(Info.JAVA_USED_MEM, SizeUnit.BYTE.toMB(javaHeap.total - javaHeap.free).toString())
                 putExtra(Info.DEVICE_MAX_MEM,SizeUnit.KB.toMB(memInfo.totalInKb).toString())
-                putExtra(Info.DEVICE_AVA_MEM, SizeUnit.KB.toMB(memInfo.availableInkb).toString())
+                putExtra(Info.DEVICE_AVA_MEM, SizeUnit.KB.toMB(memInfo.availableInKb).toString())
                 putExtra(Info.FD,(File("/proc/self/fd").listFiles()?.size?:0).toString())
 
                 var pss = Debug.getPss()

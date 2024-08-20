@@ -22,6 +22,8 @@ class FdOomTracer : OOMTracker() {
 
     override fun track(): Boolean {
         var fdCount = getFdCount()
+        Log.e("FdOOMTracer","fdCount:"+fdCount+"===="+monitorConfig.fdThreshold+"======"+(mLastCount - FD_COUNT_THRESHOLD_GAP))
+
         if (fdCount > monitorConfig!!.fdThreshold && fdCount>=mLastCount- FD_COUNT_THRESHOLD_GAP) {
             mOverThresholdCount++
             Log.i("FdOOmTracer","[meet condition] "

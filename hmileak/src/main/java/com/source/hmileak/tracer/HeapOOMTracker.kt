@@ -4,6 +4,7 @@ import android.util.Log
 import com.source.hmileak.base.Config
 import com.source.hmileak.base.OOMTracker
 import com.source.hprofanalyzer.util.SizeUnit
+import com.source.hprofanalyzer.util.SystemInfo
 
 class HeapOOMTracker : OOMTracker() {
 
@@ -16,6 +17,7 @@ class HeapOOMTracker : OOMTracker() {
 
     override fun track(): Boolean {
         val heapRatio = SystemInfo.javaHeap.rate
+        Log.e("HeapOomTracer","heapRatio:"+heapRatio+"  heapThreshold:"+monitorConfig.heapThreshold+"===="+(mlastHeapRatio - HEAP_RATIO_THRESHOLD_GAP))
         if (heapRatio>monitorConfig!!.heapThreshold && heapRatio >= mlastHeapRatio - HEAP_RATIO_THRESHOLD_GAP) {
             mOverThresholdCount++
             Log.i("HeapOOMTracker","[meet condition] "

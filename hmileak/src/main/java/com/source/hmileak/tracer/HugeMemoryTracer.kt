@@ -4,6 +4,7 @@ import android.util.Log
 import com.source.hmileak.base.Config
 import com.source.hmileak.base.OOMTracker
 import com.source.hprofanalyzer.util.SizeUnit
+import com.source.hprofanalyzer.util.SystemInfo
 
 /**
  * 大对象的检测
@@ -19,20 +20,27 @@ class HugeMemoryTracer: OOMTracker() {
 
 
     override fun track(): Boolean {
-        var javaHeap = SystemInfo.javaHeap
-        if (javaHeap.rate> monitorConfig?.forceDumpJavaHeapMaxThreshold!!) {
+        val javaHeap = SystemInfo.javaHeap
+
+        // 高危阈值直接触发dump分析
+        if (javaHeap.rate > monitorConfig.forceDumpJavaHeapMaxThreshold) {
             mDumpReason = REASON_HIGH_WATERMARK
-            Log.i("HugeMemoryTracer", "[meet condition] fast huge memory allocated detected, " +
+            Log.i("HugeMemnoryTracer", "[meet condition] fast huge memory allocated detected, " +
                     "high memory watermark, force dump analysis!")
             return true
         }
-        val lastJavaHeap =SystemInfo.lastJavaHeap
-        if (lastJavaHeap.max!= 0L &&javaHeap.used - lastJavaHeap.used> SizeUnit.KB.toByte(monitorConfig!!.forceDumpJavaHeapMaxThreshold)){
+
+        // 高差值直接dump
+        val lastJavaHeap = SystemInfo.lastJavaHeap
+        Log.e("HugeMemnoryTracer","======"+ SizeUnit.KB.toByte(monitorConfig.forceDumpJavaHeapDeltaThreshold)+"===="+monitorConfig.forceDumpJavaHeapMaxThreshold+"==="+(javaHeap.used - lastJavaHeap.used))
+        if (lastJavaHeap.max != 0L && javaHeap.used - lastJavaHeap.used
+            > SizeUnit.KB.toByte(monitorConfig.forceDumpJavaHeapDeltaThreshold)) {
             mDumpReason = REASON_HUGE_DELTA
-            Log.i("HugeMemoryTracer",  "[meet condition] fast huge memory allocated detected, " +
+            Log.i("HugeMemnoryTracer", "[meet condition] fast huge memory allocated detected, " +
                     "over the delta threshold!")
             return true
         }
+
         return false
     }
 

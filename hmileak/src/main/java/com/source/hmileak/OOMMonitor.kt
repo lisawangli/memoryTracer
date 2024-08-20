@@ -138,6 +138,7 @@ public object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
     }
 
     override fun call(): State {
+        Log.e("OOMMonitor","mHasDumped:"+mHasDumped)
         if (mHasDumped) {
             return State.Terminate
         }
@@ -157,7 +158,8 @@ public object OOMMonitor : LooperMonitor<Config>(),LifecycleEventObserver {
             if (oomTracer.track())
                 mTraceReason.add(oomTracer.reason())
         }
-        if (mTraceReason.isEmpty()){
+        if (mTraceReason.isNotEmpty()){
+            Log.e("OOMMonitor","=========trackOOM=======")
             async {
 
                 dumpAndAnalysis()

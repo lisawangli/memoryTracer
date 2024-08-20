@@ -1,9 +1,9 @@
 package com.source.hmileak.tracer
 
 import android.util.Log
-import com.source.hmileak.base.Config
 import com.source.hmileak.base.OOMTracker
 import com.source.hprofanalyzer.util.OOMFileManager
+import com.source.hprofanalyzer.util.SystemInfo
 import java.io.File
 
 class ThreadOOMTracer : OOMTracker() {
@@ -18,6 +18,9 @@ class ThreadOOMTracer : OOMTracker() {
 
     override fun track(): Boolean {
         var threadCount = getThreadCount()
+
+        Log.e("ThreadOOMTracer","threadCount:"+threadCount+"====="+monitorConfig.threadThreshold+"==="+(mLastThreadCount - THREAD_COUNT_THRESHOLD_GAP))
+
         if (threadCount>monitorConfig!!.threadThreshold && threadCount>=mLastThreadCount- THREAD_COUNT_THRESHOLD_GAP) {
             mOverThresholdCount++
             Log.i("ThreadOOMTracer",

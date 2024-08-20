@@ -3,6 +3,7 @@ package com.source.hmileak.tracer
 import android.util.Log
 import com.source.hmileak.base.Config
 import com.source.hmileak.base.OOMTracker
+import com.source.hprofanalyzer.util.SystemInfo
 
 /**
  *  物理内存追踪
@@ -16,6 +17,8 @@ class PhysicalMemoryTracer : OOMTracker(){
 
     override fun track(): Boolean {
        var info = SystemInfo.memInfo
+        android.util.Log.e("PhysicalMemory","info:"+info.rate+"====="+monitorConfig.deviceMemoryThreshold)
+
         when{
             info.rate < monitorConfig!!.deviceMemoryThreshold -> {
                 Log.e(TAG, "oom meminfo.rate < " +

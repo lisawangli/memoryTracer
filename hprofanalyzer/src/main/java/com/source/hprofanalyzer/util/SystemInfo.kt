@@ -10,119 +10,134 @@ import java.io.FileInputStream
 import java.io.InputStreamReader
 import java.nio.charset.Charset
  object SystemInfo {
-    private const val TAG = "OOMMonitor_SystemInfo"
-    private val VSS_REGEX = "VmSize:\\s*(\\d+)\\s*kB".toRegex()
-    private val RSS_REGEX = "VmRSS:\\s*(\\d+)\\s*kB".toRegex()
-    private val THREADS_REGEX = "Threads:\\s*(\\d+)\\s*".toRegex()
-    private val MEM_TOTAL_REGEX = "MemTotal:\\s*(\\d+)\\s*kB".toRegex()
-    private val MEM_FREE_REGEX = "MemFree:\\s*(\\d+)\\s*kB".toRegex()
-    private val MEM_AVA_REGEX = "MemAvailable:\\s*(\\d+)\\s*kB".toRegex()
-    private val MEM_CMA_REGEX = "CmaTotal:\\s*(\\d+)\\s*kB".toRegex()
-    private val MEM_ION_REGEX = "ION_heap:\\s*(\\d+)\\s*kB".toRegex()
+     private const val TAG = "OOMMonitor_SystemInfo"
 
-    var procStatus = ProcStatus()
+     private val VSS_REGEX = "VmSize:\\s*(\\d+)\\s*kB".toRegex()
+     private val RSS_REGEX = "VmRSS:\\s*(\\d+)\\s*kB".toRegex()
+     private val THREADS_REGEX = "Threads:\\s*(\\d+)\\s*".toRegex()
+     private val MEM_TOTAL_REGEX = "MemTotal:\\s*(\\d+)\\s*kB".toRegex()
+     private val MEM_FREE_REGEX = "MemFree:\\s*(\\d+)\\s*kB".toRegex()
+     private val MEM_AVA_REGEX = "MemAvailable:\\s*(\\d+)\\s*kB".toRegex()
+     private val MEM_CMA_REGEX = "CmaTotal:\\s*(\\d+)\\s*kB".toRegex()
+     private val MEM_ION_REGEX = "ION_heap:\\s*(\\d+)\\s*kB".toRegex()
 
-    var lastProcStatus =ProcStatus()
+     var procStatus = ProcStatus()
+     var lastProcStatus = ProcStatus()
 
-    var memInfo = MemInfo()
+     var memInfo = MemInfo()
+     var lastMemInfo = MemInfo()
 
-    var lastMemInfo = MemInfo()
+     var javaHeap = JavaHeap()
+     var lastJavaHeap = JavaHeap()
 
-    var javaHeap = JavaHeap()
+     //selinux权限问题，先注释掉
+     //var dmaZoneInfo: ZoneInfo = ZoneInfo()
+     //var normalZoneInfo: ZoneInfo = ZoneInfo()
 
-    var lastJavaHeap = JavaHeap()
+     fun refresh() {
+         lastJavaHeap = javaHeap
+         lastMemInfo = memInfo
+         lastProcStatus = procStatus
 
-    @SuppressLint("SuspiciousIndentation")
-    fun refresh() {
-        lastJavaHeap = javaHeap
-        lastMemInfo = memInfo
-        lastProcStatus = procStatus
-        javaHeap = JavaHeap()
-        procStatus = ProcStatus()
-        memInfo = MemInfo()
+         javaHeap = JavaHeap()
+         procStatus = ProcStatus()
+         memInfo = MemInfo()
 
-        javaHeap.max = Runtime.getRuntime().maxMemory()
-        javaHeap.free = Runtime.getRuntime().freeMemory()
-        javaHeap.total = Runtime.getRuntime().totalMemory()
-        javaHeap.used = javaHeap.total - javaHeap.free
-        javaHeap.rate =1.0f * javaHeap.used / javaHeap.max
+         javaHeap.max = Runtime.getRuntime().maxMemory()
+         javaHeap.total = Runtime.getRuntime().totalMemory()
+         javaHeap.free = Runtime.getRuntime().freeMemory()
+         javaHeap.used = javaHeap.total - javaHeap.free
+         javaHeap.rate = 1.0f * javaHeap.used / javaHeap.max
 
-        File("/proc/self/status").forEachLineQuiety { line ->
-            if (procStatus.vssInKb != 0 && procStatus.rssInKb != 0 && procStatus.thread!=0)
-            return@forEachLineQuiety
+         File("/proc/self/status").forEachLineQuietly { line ->
 
-            when {
-                line.startsWith("VmSize") ->{
-                    procStatus.vssInKb = VSS_REGEX.matchValue(line)
-                }
-                line.startsWith("VmRSS") ->{
-                    procStatus.rssInKb = RSS_REGEX.matchValue(line)
-                }
-                line.startsWith("Threads") ->{
-                    procStatus.thread = THREADS_REGEX.matchValue(line)
-                }
-            }
-        }
+             if (procStatus.vssInKb != 0 && procStatus.rssInKb != 0
+                 && procStatus.thread != 0) return@forEachLineQuietly
+             when {
+                 line.startsWith("VmSize") -> {
+                     procStatus.vssInKb = VSS_REGEX.matchValue(line)
+                 }
 
-        File("/proc/meminfo").forEachLineQuiety { line ->
-            when{
-                line.startsWith("MemTotal") ->{
-                    memInfo.totalInKb = MEM_TOTAL_REGEX.matchValue(line)
-                }
-                line.startsWith("MemFree")->{
-                    memInfo.freeInKb = MEM_FREE_REGEX.matchValue(line)
-                }
-                line.startsWith("MemAvailable") ->{
-                    memInfo.availableInkb = MEM_AVA_REGEX.matchValue(line)
-                }
-                line.startsWith("CmaTotal") ->{
-                    memInfo.cmaTotal = MEM_CMA_REGEX.matchValue(line)
-                }
-                line.startsWith("ION_heap") ->{
-                    memInfo.IONHeap = MEM_ION_REGEX.matchValue(line)
-                }
-            }
-        }
+                 line.startsWith("VmRSS") -> {
+                     procStatus.rssInKb = RSS_REGEX.matchValue(line)
+                 }
 
-        memInfo.rate =1.0f* memInfo.availableInkb/ memInfo.totalInKb
-        Log.e("SystemInfo","=================OOM Monitor Memory=================")
-        Log.i("SystemInfo","java max:${javaHeap.max} used ratio:${javaHeap.rate}")
-        Log.i("SystemInfo","[proc] VmSize:${procStatus.vssInKb}kB VmRss:${procStatus.rssInKb}kB " + "Threads:${procStatus.thread}")
-        Log.i("SystemInfo","[meminfo] MemTotal:${memInfo.totalInKb}kB MemFree:${memInfo.freeInKb}kB " + "MemAvailable:${memInfo.availableInkb}kB")
-        Log.i("SystemInfo","avaliable ratio:${(memInfo.rate * 100).toInt()}% CmaTotal:${memInfo.cmaTotal}kB ION_heap:${memInfo.IONHeap}kB")
-    }
+                 line.startsWith("Threads") -> {
+                     procStatus.thread = THREADS_REGEX.matchValue(line)
+                 }
+             }
+         }
 
-    data class ProcStatus(var thread: Int = 0,var vssInKb: Int = 0,var rssInKb:Int = 0)
+         File("/proc/meminfo").forEachLineQuietly { line ->
+             when {
+                 line.startsWith("MemTotal") -> {
+                     memInfo.totalInKb = MEM_TOTAL_REGEX.matchValue(line)
+                 }
 
-    data class MemInfo(var totalInKb: Int = 0,var freeInKb: Int = 0,var availableInkb: Int = 0, var IONHeap: Int = 0,var cmaTotal: Int = 0,var rate:Float = 0f)
+                 line.startsWith("MemFree") -> {
+                     memInfo.freeInKb = MEM_FREE_REGEX.matchValue(line)
+                 }
 
-    data class JavaHeap(var max: Long = 0,var total: Long = 0,var free: Long = 0,var used: Long = 0,var rate:Float = 0f)
+                 line.startsWith("MemAvailable") -> {
+                     memInfo.availableInKb = MEM_AVA_REGEX.matchValue(line)
+                 }
 
-    private fun Regex.matchValue(s:String) = matchEntire(s.trim())?.groupValues?.getOrNull(1)?.toInt()?:0
+                 line.startsWith("CmaTotal") -> {
+                     memInfo.cmaTotal = MEM_CMA_REGEX.matchValue(line)
+                 }
 
-    private fun File.forEachLineQuiety(charset: Charset = Charsets.UTF_8,action:(line:String) -> Unit){
-        kotlin.runCatching {
-            BufferedReader(InputStreamReader(FileInputStream(this),charset)).forEachLine(action)
-        }.onFailure {
-            it.printStackTrace()
-        }
-    }
+                 line.startsWith("ION_heap") -> {
+                     memInfo.IONHeap = MEM_ION_REGEX.matchValue(line)
+                 }
+             }
+         }
 
-    fun isSupportArm64():Boolean{
-        if (Build.VERSION.SDK_INT<Build.VERSION_CODES.LOLLIPOP) {
-            return false
-        }
-        return supportedAbis().contains("arm64-v8a")
-    }
+         memInfo.rate = 1.0f * memInfo.availableInKb / memInfo.totalInKb
 
-    fun supportedAbis():Array<String?>{
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
-            && Build.SUPPORTED_ABIS.isNotEmpty()) {
-            Build.SUPPORTED_ABIS
-        } else if (!TextUtils.isEmpty(Build.CPU_ABI2)) {
-            arrayOf(Build.CPU_ABI, Build.CPU_ABI2)
-        } else {
-            arrayOf(Build.CPU_ABI)
-        }
-    }
-}
+         Log.i(TAG, "----OOM Monitor Memory----")
+         Log.i(TAG,"[java] max:${javaHeap.max} used ratio:${(javaHeap.rate * 100).toInt()}%")
+         Log.i(TAG,"[proc] VmSize:${procStatus.vssInKb}kB VmRss:${procStatus.rssInKb}kB " + "Threads:${procStatus.thread}")
+         Log.i(TAG,"[meminfo] MemTotal:${memInfo.totalInKb}kB MemFree:${memInfo.freeInKb}kB " + "MemAvailable:${memInfo.availableInKb}kB")
+         Log.i(TAG,"avaliable ratio:${(memInfo.rate * 100).toInt()}% CmaTotal:${memInfo.cmaTotal}kB ION_heap:${memInfo.IONHeap}kB")
+     }
+
+     data class ProcStatus(var thread: Int = 0, var vssInKb: Int = 0, var rssInKb: Int = 0)
+
+     data class MemInfo(var totalInKb: Int = 0, var freeInKb: Int = 0, var availableInKb: Int = 0,
+                        var IONHeap: Int = 0, var cmaTotal: Int = 0, var rate: Float = 0f)
+
+     data class JavaHeap(var max: Long = 0, var total: Long = 0, var free: Long = 0,
+                         var used: Long = 0, var rate: Float = 0f)
+
+     private fun Regex.matchValue(s: String) = matchEntire(s.trim())
+         ?.groupValues?.getOrNull(1)?.toInt() ?: 0
+
+     private fun File.forEachLineQuietly(charset: Charset = Charsets.UTF_8, action: (line: String) -> Unit) {
+         kotlin.runCatching {
+             // Note: close is called at forEachLineQuietly
+             BufferedReader(InputStreamReader(FileInputStream(this), charset)).forEachLine(action)
+         }.onFailure { exception -> exception.printStackTrace() }
+     }
+
+     /**
+      * 设备是否支持arm64
+      */
+     fun isSupportArm64(): Boolean {
+         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+             return false
+         }
+
+         return supportedAbis().contains("arm64-v8a")
+     }
+
+     fun supportedAbis(): Array<String?> {
+         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+             && Build.SUPPORTED_ABIS.isNotEmpty()) {
+             Build.SUPPORTED_ABIS
+         } else if (!TextUtils.isEmpty(Build.CPU_ABI2)) {
+             arrayOf(Build.CPU_ABI, Build.CPU_ABI2)
+         } else {
+             arrayOf(Build.CPU_ABI)
+         }
+     }
+ }
